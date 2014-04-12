@@ -87,7 +87,7 @@ $(function()
 				id: val.id
 			});            
 
-			if (typeCell == 3) 
+			if (typeCell == 2) 
 			{
 				typeCell = 1
 			}
