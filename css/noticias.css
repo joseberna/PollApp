@@ -1,0 +1,6 @@
+@font-face{font-family:"pollapp_font";src:url("../fonts/Questrial-Regular.ttf") format("truetype")}
+body{background:#fff;font-size:16px;font-family:"pollapp_font";text-align:center;}
+body .noticia_pri{background:#fd0;border-radius:.5em .5em .5em .5em;font-size:15px;padding:.5em 0;text-align:center;width:100%}
+body .noticias_list .icono_noticia img{width:200px;height:400}
+body .noticias_list .texto_noticia{font-family:"pollapp_font"}
+footer .footer{background:#fff}

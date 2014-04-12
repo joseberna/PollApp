@@ -1,0 +1,11 @@
+@font-face{font-family:"pollapp_font";src:url("../fonts/Questrial-Regular.ttf") format("truetype")}
+body{font-size:16px;font-family:"pollapp_font";background:#2b1b4b}
+header{font-family:"pollapp_font";background:#2b1b4b;box-shadow:0 3px 0 #e1b800;color:#fff;overflow:hidden;padding:10px;position:relative;z-index:2;}
+header .cabecera{display:inline-block}
+header .logo{margin:0 auto;padding:10px;width:60px;text-align:center;}
+header .logo img{width:200px;height:400}
+header .logo .poll_head{margin:0 auto;width:100px}
+header .titular{margin:0 80px 0 70px;}
+header .titular .titulo{font-size:18px;font-weight:normal;margin:0;padding:0}
+footer{padding:.8em;font-family:"pollapp_font";}
+footer .footer{background:#2b1b4b;border-radius:.5em .5em .5em .5em;border:2px #e1b800 dashed;color:#ffec00;font-size:15px;padding:.5em 0;text-align:center;width:100%}
