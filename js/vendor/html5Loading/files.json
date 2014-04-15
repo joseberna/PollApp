@@ -1,0 +1,9 @@
+{
+  "files": [{
+    "source": "../../chicapollapp.js",
+    "type": "SCRIPT",
+    "size": 1.096,
+    "stopExecution":false
+  }
+  ]
+}
