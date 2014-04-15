@@ -34,8 +34,7 @@ $(function()
 		 dataType: 'jsonp', 
 		 contentType: 'application/json', 
 		 type: "GET", 
-		 success: function(data) { 
-		   console.log(data);
+		 success: function(data) {		   
 		   dataModelsApi = data;
 		   gridGenerate(data);	   
 		 }, 
@@ -102,20 +101,15 @@ $(function()
 	function clickModel(ev)
 	{
 		ev.preventDefault();		
-		var keyStorage = "selectedModel";		
+		var keyStorage = "selectedModel";
 
-		if(sessionStorage.getItem(keyStorage) != null)
-		{
-
-			var tmp = JSON.parse(sessionStorage.getItem(keyStorage));
-			console.log(tmp.id);
-
-		}
 
 		if(typeof(Storage) != "undefined")
-  		{  			
+  		{  	
+  			var model = selectedtModel(ev.target.id);  			
+
   			sessionStorage.setItem(keyStorage, 
-  				JSON.stringify(dataModelsApi.models[ev.target.id - 1]));
+  				JSON.stringify(model));
   		}
 		else
   		{
@@ -123,6 +117,20 @@ $(function()
   		}
 
   		window.location.href = "votachicapollapp.html";
+	}
+
+	function selectedtModel(idModel)
+	{
+		var model;
+
+		$.each(dataModelsApi.models, function(index, val) {			
+			 if (val.id == idModel) 
+			 {			 	
+			 	model = val;			 	
+			 };
+		});
+
+		return model;
 	}
 
 	function getMainPicture(arrPictures)
@@ -139,6 +147,8 @@ $(function()
 		});
 
 		return picture;
-	}	
+	}
 
 });
+
+
