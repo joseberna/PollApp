@@ -1,60 +1,65 @@
 
 $(function()
-{	
+{		
 
-	loadTweets();
+	getDataTweets();
 
-	function loadTweets()
+	function getDataTweets()
 	{
 
-		var encodeKey = encodeURIComponent(getTwitterConsumerTokens().key, 'RFC 1738');
-		var encodeSecret = encodeURIComponent(getTwitterConsumerTokens().secret, 'RFC 1738');
+		var apiUrl = "https://1-dot-logical-light-488.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweets"; 
 
-		var bearerToken = encodeKey + ':' + encodeSecret;
-
-		console.log(bearerToken);
-
-		var bearerTokenBase64 = btoa(bearerToken);
-
-		console.log(bearerTokenBase64);
-
-		var urlTwitter = "https://api.twitter.com/oauth2/token";		
-
-		$.ajax({
-			url: urlTwitter,
-			dataType: 'jsonp',
-			type:"POST",
-			beforeSend: function(request)
-			{
-				request.setRequestHeader("Authorization", "Basic " + bearerTokenBase64);
-                request.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
-                request.setRequestHeader("Accept-Encoding","gzip");
-			},
-			
-        	data: "grant_type=client_credentials",
-        	processData: false,
-
-        	success: function(msg) {
-            	alert("successfull");
-        	},
-
-        	error: function(xhr, ajaxOptions, thrownError) { 		   
-		   		console.log("Error: "+ xhr.status);
-		 	}
+		$.ajax({ 
+		 url: apiUrl, 
+		 dataType: 'jsonp', 
+		 contentType: 'application/json', 
+		 type: "GET", 
+		 success: function(data) {		   
+		   loadTweets(data);
+		 }, 
+		 error: function(xhr, ajaxOptions, thrownError) { 		   
+		   console.log("Error: "+ + xhr.status);
+		 }   
 		});
 
 	}
 
-	function getTeewts(data)
+	function loadTweets(data)
+	{		
+
+		$.each(data.tweets, function(index, tweet) {
+			
+			var post = getTemplate(tweet.name, tweet.screenName, tweet.text, tweet.profileImageURL, tweet.createdAt);
+
+			$('.posts').prepend($(post).fadeIn(function()
+					{
+						$(this).css('display', 'inline-block');
+					}));
+
+
+		});		
+
+	}	
+
+	function getTemplate(name, screenName, text, image, createdAt)
 	{
 
-		console.log(data);
+		var template = '<article class="post"> \
+					<div class="description"> \
+						<figure class="imagen"> \
+							<img src="'+image+'"> \
+						</figure> \
+						<div class="details"> \
+							<h2 class="name">'+name+'</h2> \
+							<h2 class="screenName">@'+screenName+'</h2> \
+							<p class="text"> \
+								'+text+' \
+								</p> \
+						</div> \
+					</div> \
+					</article>';
 
-	}
-
-	function getTwitterConsumerTokens(){
-		return {key: "YjbFuhig1rLvE2ZnidvQ", 
-		secret: "Hz3SiNE0IRbLfKMMZRJA60yUovvaQWrX3yiwg2pnz4"};
+		return template;
 	}
 
 });
