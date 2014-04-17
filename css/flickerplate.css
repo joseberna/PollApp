@@ -1,3 +1,7 @@
+.flicker-pollapp ul li img{
+ width:100px;
+ height:200px;	
+}
 .flickerplate{
  position:relative;
  width:100%;
