@@ -1,6 +1,7 @@
 @font-face{font-family:"pollapp_font";src:url("../fonts/Questrial-Regular.ttf") format("truetype")}
 h1{text-align:center;color:#fd0;font-weight:bold;font-size:20px;font-family:"pollapp_font"}
 h2{color:#fff;font-weight:bold;font-size:12px;font-family:"pollapp_font"}
+h3{text-align:center;color:#fff;font-weight:bold;font-size:20px;font-family:"pollapp_font"}
 .grupos{height:400px;overflow-y:scroll;padding:.5em;}
 .grupos .gri_grupos h1{text-align:center;color:#fd0;font-weight:bold;font-size:20px;font-family:"pollapp_font"}
 .grupos .gri_grupos h2{color:#fff;font-weight:bold;font-size:12px;font-family:"pollapp_font"}
