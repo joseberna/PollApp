@@ -1,78 +1,87 @@
 morado = #2B1B4B
-amarillo_osc = #E1B800
-amarillo_cla = #FFDD00
-azul_osc = #3C599F
-azul_cla = #00ACED
-rojo = #CC3333
 amarillo = #FFEC00
 blanco = #FFFFFF
+grisClaro = #D7D7D7
+amarillo_osc = #E1B800
 
 @font-face {
     font-family: "pollapp_font";
     src: url(../fonts/Questrial-Regular.ttf) format("truetype");
 }
 
-body
-	background blanco
+body	
 	font-size 16px
-	font-family: "pollapp_font"
-	text-align center
-	.news	
-		padding 0.8em	
-		.noticias
-			div
-				padding 0.3em
-			.noti_cabecera
-				text-align center
-				width 100%
+	font-family: "pollapp_font"		
+
+section
+	height 75%
+
+	.noti_cabecera
+		height 10%
+		text-align center
+		width 100%
+
+	.posts		
+		height 82%
+		overflow-y scroll
+		padding 0.5em
+
+		.post	
+			background white
+			box-shadow 2px 2px 10px rgba(black, 0.5)
+			border-radius 0 0 0.5em 0.5em
+			color morado
+			margin-bottom 0.5em	
+			width 100%
+
+			&:hover
+				background rgba(grisClaro, 1)
+				border 1px amarillo_osc solid
 		
-	.noti_cabecera		
-		width 100%	
+			.description			
+				width 100%	
 
-footer
-	.footer
-		background blanco
+				.details
+					margin-left 70px							
 
-.posts
-	height 400px
-	overflow-y scroll
-	padding 0.5em
+					.date
+						float right
+						margin 0 1em 0 0
+						font-size 0.8 em
 
-	.post	
-		background white
-		box-shadow 2px 2px 10px rgba(black, 0.5)
-		border-radius 0 0 0.5em 0.5em
-		color morado
-		margin-bottom 0.5em	
-	
-		.description			
-			width 100%	
+					.name
+						color morado
+						font-size 1 em
+						margin 0
+						padding 0.5em 0.5em 0 0
+						text-align left
 
-			.details
-				margin-left 70px
+					.screenName
+						color grisOscuro
+						font-size 0.8 em					
+						margin 0
+						padding 0.5em 0.5em 0 0
+						text-align left
 
-				.name
-					color morado
-					font-size 1 em					
-					margin 0
-					padding 0.5em 0.5em 0 0
-					text-align left
-
-				.screenName
-					color grisOscuro
-					font-size 0.8 em					
-					margin 0
-					padding 0.5em 0.5em 0 0
-					text-align left
-
-				.text
-					margin 0.5em 0.5em 0.5em 0
-					text-align justify											
+					.text
+						margin 0.5em 0.5em 0.5em 0
+						text-align justify									
 				
-			
-			.imagen
-				float left
+				.imagen
+					float left
 
-				img
-					padding 0.5em 0 0.5em 0.5em
-					vertical-align top
+					img
+						padding 0.5em 0 0.5em 0.5em
+						vertical-align top
+
+	.loadMore
+		background morado
+		text-align center
+		width 100%		
+
+		a			
+			color white
+			height 3%
+			text-decoration none
+			vertical-align middle	
+
