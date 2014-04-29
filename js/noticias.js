@@ -12,11 +12,7 @@ $(function()
 	function getDataTweets(count, maxId)
 	{
 				
-<<<<<<< HEAD
 		var apiUrl = "https://1-dot-logical-light-488.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination?count=" + count + "&maxId="+ maxId;
-=======
-		var apiUrl = "https://2-dot-logical-light-488.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination?count=" + count + "&maxId="+ maxId;
->>>>>>> ebb1180de66e7c7e14137a4621da71d578c86cab
 
 		$.ajax({ 
 		 url: apiUrl, 
