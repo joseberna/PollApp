@@ -4,7 +4,11 @@ section{height:75%;}
 section .noti_cabecera{height:10%;text-align:center;width:100%}
 section .posts{height:75%;overflow-y:scroll;padding:.5em;}
 section .posts .post{background:#fff;box-shadow:2px 2px 10px rgba(0,0,0,0.5);border-radius:0 0 .5em .5em;color:#2b1b4b;margin-bottom:.5em;width:100%;}
+<<<<<<< HEAD
 section .posts .post:hover{background:#d7d7d7}
+=======
+section .posts .post:hover{background:#d7d7d7;border:1px #e1b800 solid}
+>>>>>>> ebb1180de66e7c7e14137a4621da71d578c86cab
 section .posts .post .description{width:100%;}
 section .posts .post .description .details{margin-left:70px;}
 section .posts .post .description .details .date{float:right;margin:0 1em 0 0;font-size:.8em}
