@@ -122,8 +122,7 @@ $(function()
 	}
 
 	function loadMore(ev){
-		console.log("entro al evento = " + maxIdGlobal);
-
+		
 		ev.preventDefault();
 
 		getDataTweets(countTweeets, ++maxIdGlobal);

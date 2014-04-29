@@ -3,8 +3,8 @@
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:gap="http://phonegap.com/ns/1.0"
     id="us.pollapp.inturik"
-    versionCode="300"
-    version="0.1.1.1">
+    versionCode="301"
+    version="0.1.1.2">
    
     <name>PollApp</name>
 
