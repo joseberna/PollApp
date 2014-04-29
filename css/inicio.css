@@ -4,11 +4,10 @@
 .menu .options div .cell_a .titulo_a{color:#2b1b4b;text-align:center;}
 .menu .options div .cell_a .titulo_a .camisa img{padding:1em 0 1em 0;width:80%}
 .menu .options div .cell_b{background:#fff;box-shadow:2px 2px 10px rgba(255,221,0,0.5);border-radius:.5em .5em .5em .5em;margin-bottom:.5em;}
-.menu .options div .cell_b .titulo_b{color:#2b1b4b;dysplay:block;font-size:20px;text-align:center;}
+.menu .options div .cell_b .titulo_b{color:#2b1b4b;text-align:center;}
 .menu .options div .cell_b .titulo_b .chica img{width:80%;height:80%}
-.menu .options div{padding:.3em;}
 .menu .options div .cell_c{background:#fff;box-shadow:2px 2px 10px rgba(255,221,0,0.5);border-radius:.5em .5em .5em .5em;margin-bottom:.5em;}
-.menu .options div .cell_c .titulo_c{color:#2b1b4b;font-size:30px;}
+.menu .options div .cell_c .titulo_c{color:#2b1b4b;text-align:center;}
 .menu .options div .cell_c .titulo_c .noticias{margin:auto;}
 .menu .options div .cell_c .titulo_c .noticias img{width:80%;height:80%}
 .menu .options div .cell_d{background:#fd0;box-shadow:2px 2px 10px rgba(255,221,0,0.5);border-radius:.5em .5em .5em .5em;margin-bottom:.5em;}
