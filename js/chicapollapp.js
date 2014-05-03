@@ -27,7 +27,7 @@ $(function()
 	function getDataModels()
 	{
 
-		var apiUrl = "https://2-dot-logical-light-488.appspot.com/_ah/api/modelendpoint/v1/getAllModelsActive"; 
+		var apiUrl = "https://1-dot-logical-light-488.appspot.com/_ah/api/modelendpoint/v1/getAllModelsActive"; 
 
 		$.ajax({ 
 		 url: apiUrl, 
