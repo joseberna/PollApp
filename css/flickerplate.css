@@ -1,11 +1,11 @@
 .flicker-pollapp ul li img{
- width:200px;
- height:200px;
+ width:100%;
+ height:100%;
 }
 .flickerplate{
  position:relative;
  width:100%;
- height:400px;
+ height:100%;
  background-color:#e6e6e6;
  overflow:hidden;
 }
