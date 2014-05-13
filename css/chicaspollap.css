@@ -2,4 +2,4 @@ body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-
 section{height:75%;}
 section .modelsGrid{height:100%;overflow-y:scroll;}
 section .modelsGrid div{text-align:center}
-section .modelsGrid .modelPhoto{border:2px #e1b800 solid;height:90%;width:90%}
+section .modelsGrid .modelPhoto{border:2px #e1b800 solid;height:70%;width:70%}
