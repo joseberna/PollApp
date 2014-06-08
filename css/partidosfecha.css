@@ -1,0 +1,175 @@
+@font-face{font-family:"pollapp_font";src:url("../fonts/Questrial-Regular.ttf") format("truetype")}
+h1{text-align:center;color:#2b1b4b;font-weight:bold;font-size:20px;font-family:"pollapp_font"}
+h2{color:#3c599f;font-weight:bold;font-size:12px;font-family:"pollapp_font"}
+h3{text-align:center;color:#fff;font-weight:bold;font-size:20px;font-family:"pollapp_font"}
+body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-polla.png")}
+header a{text-decoration:none;color:#ffec00;font-weight:bold;font-size:15px;font-family:"pollapp_font"}
+section{height:75%;margin-left: 10px;margin-right: 10px; position: relative;}
+
+.titulos{
+	text-align:center;
+	color:#2b1b4b;
+	font-weight:bold;
+	font-size:1.17em;
+	font-family:"pollapp_font"
+}
+
+#ajax-content {
+	width: 100%; 
+	overflow: hidden; 
+	height: 40%;
+	/*height: auto;*/
+	border: none;
+	overflow-y: scroll;
+    overflow-x:scroll;
+    /*background-color: white;*/
+	background-color: rgba(255,255,255,0.7);
+}
+#ajax-content :not(table,tr,td){
+    background-color: white;	
+	opacity:0.1;
+}
+
+#ajax-content h1, #ajax-content p {
+	padding: 0 10px; 
+	/*margin: 0px !important;*/
+	margin: 0px;
+}
+#ajax-content ul {list-style: disc; line-height: 1.5em;}
+
+#main{
+    position: absolute;
+	/*background-color:yellow;*/
+	width:100%;
+	height:100%;
+}
+#jugador{
+	width: 100%; 
+	overflow: hidden; 
+	height: 20%;
+	/*height: auto;*/
+	border: none;
+    /*background-color: white;*/
+}
+
+#jugador span {
+    vertical-align:middle;
+    display: table-cell;
+}
+
+table{
+    width:100%;
+    height:100%;      
+}
+td{
+    width:50%;
+	height:50%;    
+}
+tr .tdrow{
+    text-align:center;
+}
+tr .tdrowl,.tdrowr{
+   width:40%;
+   padding:5px;
+}
+tr .tdrowc{
+   width:20%;
+   padding:3px;
+}
+
+tr .tdrowuser{
+	font-weight:bold;
+	font-size:1em;
+	color:#2D336A;
+}
+
+tr .tdrowres{	
+	font-size:2.5em;
+	color:#2D336A;
+}
+
+tr .tdrowname{
+	font-size:1em;
+	color:#2D336A;
+}
+
+table,th,td
+{
+/*border:1px solid black;
+border-collapse:collapse;*/
+}
+
+tr .tdrowteam{	
+	width:10%;
+}
+
+tr .teamplayer{	
+	width:10%;
+	text-align:center;	
+}
+
+#resultteamA {
+	width: 30%; 
+	overflow: hidden; 
+	/*height: 40%;*/
+	font-size:1.17em;
+	color:#2D336A;
+	text-align:center;	
+	display:block; 
+	margin:0 auto 0 auto;
+}
+
+#resultteamB {
+	width: 30%; 
+	overflow: hidden; 
+	/*height: 40%;*/
+	font-size:1.17em;
+	color:#2D336A;
+	text-align:center;	
+	display:block; 
+	margin:0 auto 0 auto;
+}
+
+img{
+	/*width: 60%; */
+	overflow: hidden; 
+	/*height: 40%;*/
+	border: none;
+	display:block;
+	margin:0 auto 0 auto;
+}
+
+.btnGuardar {
+	width: 50%; 
+	overflow: hidden; 
+	/*height: 40%;*/
+	border: none;
+	display:block;
+	margin:0 auto 0 auto;
+	cursor: pointer;
+}
+
+#tableplayer{
+    width:100%;
+    height:50%;      
+}
+
+.ajax-load {
+	z-index:1;
+	filter:alpha(opacity=60);
+	float:left;
+	-moz-opacity:.60;
+	opacity:.60;
+	/*background-color: Transparent;*/
+	color:#fff;
+	position:absolute;
+	text-align:center;
+	top:170px;
+	left:0px;
+	padding:0px;
+	font-size:100%;
+	font-weight:bold;
+	width: 100%;
+	height: 100%;
+	display: none;
+}

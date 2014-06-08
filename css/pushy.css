@@ -5,6 +5,11 @@
 
 /* Menu Appearance */
 
+@font-face {
+    font-family: "pollapp_font";
+    src: url(../fonts/Questrial-Regular.ttf) format("truetype");
+}
+
 .pushy{
     position: fixed;
     width: 200px;
@@ -29,6 +34,16 @@
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     border-top: 1px solid rgba(255, 255, 255, .1);
     text-decoration: none;
+    font-family: "pollapp_font";
+}
+.pushy .subtitulo a{
+    display: block;
+    color: #3C599F;
+    font-weight: bold;
+    font-size:12px;
+    padding: 10px 50px;
+    text-decoration: none;
+    font-family: "pollapp_font";
 }
 
 .pushy a:hover{

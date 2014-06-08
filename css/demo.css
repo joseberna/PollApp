@@ -37,3 +37,16 @@ ul{
 	background: #00b4ff;
 	color: #FFF;
 }*/
+
+.volver-btn{
+		
+	float: left;
+	width: 53px;
+	height: 30px;
+	padding: 5px 0px 0px 0px;
+	margin-top: 6px; 
+	margin-left: 0px;
+	background: url('../img/flechavolver.png') no-repeat;
+	color: #FFF;	
+	cursor: pointer;
+}

@@ -1,0 +1,53 @@
+/*@font-face{font-family:"pollapp_font";src:url("../fonts/Questrial-Regular.ttf") format("truetype")}
+h1{text-align:center;color:#2b1b4b;font-weight:bold;font-size:20px;font-family:"pollapp_font"}
+h2{color:#3c599f;font-weight:bold;font-size:12px;font-family:"pollapp_font"}*/
+/*header a{text-decoration:none;color:#ffec00;font-weight:bold;font-size:15px;font-family:"pollapp_font"}*/
+/*body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-polla.png"); }*/
+body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-polla.png")}
+section{height:60%;margin-left: 10px;margin-right: 10px;overflow-y: scroll;}
+h4{text-align:center;color:#2b1b4b;font-weight:bold;font-size:1.5em;font-family:"pollapp_font";margin: 0;}
+/*body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-polla.png");}*/
+/*section{height:70%;overflow-y: scroll;}*/
+/*section .titulo{margin:10%;color:#2b1b4b;font-weight:bold;font-size:20px;font-family:"pollapp_font";text-align:center}
+section .nom_polla{margin:10%;color:#ffec00;font-weight:bold;font-size:15px;font-family:"pollapp_font";text-align:center}
+section .participantes{margin:10%;color:#2b1b4b;font-weight:bold;font-size:15px;font-family:"pollapp_font";text-align:center}
+section .inv_amigos{margin:10%;color:#ffec00;font-weight:bold;font-size:15px;font-family:"pollapp_font";text-align:center;}
+section .inv_amigos div{display:inline-block}
+section .inv_amigos button{margin:10%;background:#ffec00;border:1px;color:#2b1b4b;font-size:16px;font-weight:bolder}*/
+label {font-size : 20px; color: #2D336A; font-family:"pollapp_font"}
+table tr .trow{
+	color: #2D336A;	
+}
+table tr .date{
+	font-weight: bold;
+	text-align: left;	
+	padding-bottom: 2%;
+}
+table tr .date label{
+	font-size: 1.2em;
+}
+table tr .team{
+	width: 50%;
+}
+table tr .score{
+	width: 10%;	
+}
+table tr .score label{
+	font-size: 1em;
+	background:white; 		
+	padding: 10%;
+	border: 1px solid #2D336A;
+}
+table tr .scorereal{
+	width: 10%;
+}
+table tr .scorereal label{
+	font-size: 1em;
+	background:#2D336A; 	
+	padding: 10%;
+	color: white;
+	border: 1px solid white;
+}
+table tr .last{
+	height: 10%;	
+}
