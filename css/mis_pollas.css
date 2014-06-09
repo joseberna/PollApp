@@ -1,8 +1,10 @@
+body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-polla.png")}
 #myPollas ul {
   list-style-type: none;
   margin: 0;
   padding: 5px !important;
 }
+.pollas{height:70%;overflow-y:scroll;padding:.5em;}
  
 #myPollas ul li a {   
   text-decoration: none;
@@ -69,3 +71,4 @@
   height: 100%;
   display: none;
 }
+

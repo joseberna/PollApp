@@ -10,21 +10,40 @@ $(function()
 	getDataTweets(countTweeets, 0);
 
 	function getDataTweets(count, maxId)
-	{
-				
-		var apiUrl = "https://1-dot-logical-light-488.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination?count=" + count + "&maxId="+ maxId;
+	{		
+
+		var apiUrl = Servicios.getAllTweetsPagination;
+		var idTransaccion = getIdTransaccion();
 
 		$.ajax({ 
-		 url: apiUrl, 
-		 dataType: 'jsonp', 
-		 contentType: 'application/json', 
-		 type: "GET", 
-		 success: function(data) {		   
-		   loadTweets(data);
-		 }, 
-		 error: function(xhr, ajaxOptions, thrownError) { 		   
-		   alert("Error: "+ + xhr.status);
-		 }   
+			url: apiUrl, 
+			dataType: 'jsonp', 
+			contentType: 'application/json', 
+			type: "GET",
+			data: {
+				application: 'mobilePollapp',
+				idTransaction: idTransaccion,
+				pageNumber: 0,
+				pageSize: 0,
+				user: defaultUserName,
+				count: count,
+				maxId: maxId
+			},
+			success: function(data) {		   
+				loadTweets(data);
+				onAjaxComplete();
+			}, 
+			error: function(xhr, ajaxOptions, thrownError) { 		   
+				alert("Error: "+ + xhr.status);
+			},
+			beforeSend: function( xhr ) {
+				onAjaxLoad();
+			},
+			complete: function(xhr, textStatus ) {
+				if(textStatus !== 'success') {
+					onAjaxComplete();
+				}
+			}  
 		});
 
 	}
@@ -38,15 +57,15 @@ $(function()
 
 				if (--maxIdGlobal != tweet.id)
 				{
-				
+
 					post = getTemplate(tweet.name, tweet.screenName, tweet.text, tweet.profileImageURL, tweet.createdAt);			
 
 					maxIdGlobal = tweet.id;
 
 					$('.posts').append($(post).fadeIn(1000,function()
-							{
-								$(this).css('display', 'inline-block');
-							}));
+					{
+						$(this).css('display', 'inline-block');
+					}));
 
 				}
 
@@ -61,64 +80,64 @@ $(function()
 		var date = parseTwitterDate(createdAt);
 
 		var template = '<article class="post"> \
-					<div class="description"> \
-						<figure class="imagen"> \
-							<img src="'+image+'"> \
-						</figure> \
-						<div class="details"> \
-							<h2 class="name">'+name+'</h2> \
-							<h2 class="screenName">@'+screenName+'</h2> \
-							<p class="text"> \
-								'+text+' \
-								</p> \
-							<p class="date"><strong>'+date+'</strong> </p> \
-						</div> \
-					</div> \
-					</article>';
+		<div class="description"> \
+		<figure class="imagen"> \
+		<img src="'+image+'"> \
+		</figure> \
+		<div class="details"> \
+		<h2 class="name">'+name+'</h2> \
+		<h2 class="screenName">@'+screenName+'</h2> \
+		<p class="text"> \
+		'+text+' \
+		</p> \
+		<p class="date"><strong>'+date+'</strong> </p> \
+		</div> \
+		</div> \
+		</article>';
 
 		return template;
 	}
 
 	function parseTwitterDate(tdate) {
 
-	    var system_date = new Date(Date.parse(tdate));
-	    var user_date = new Date();
+		var system_date = new Date(Date.parse(tdate));
+		var user_date = new Date();
 
-	    if (K.ie) {
-	        system_date = Date.parse(tdate.replace(/( \+)/, ' UTC$1'))
-	    }
+		if (K.ie) {
+			system_date = Date.parse(tdate.replace(/( \+)/, ' UTC$1'))
+		}
 
-	    var diff = Math.floor((user_date - system_date) / 1000);
-	    if (diff <= 1) {return "ahora";}
-	    if (diff < 20) {return "Hace "+ diff + " segundos";}
-	    if (diff < 40) {return "Hace medio minuto";}
-	    if (diff < 60) {return "Menos de un minuto";}
-	    if (diff <= 90) {return "Hace un minuto";}
-	    if (diff <= 3540) {return "Hace " + Math.round(diff / 60) + " minutos";}
-	    if (diff <= 5400) {return "Hace 1 Hora";}
-	    if (diff <= 86400) {return "Hace " + Math.round(diff / 3600) + " horas";}
-	    if (diff <= 129600) {return "Hace 1 dia";}
-	    if (diff < 604800) {return "Hace " + Math.round(diff / 86400) + " dias";}
-	    if (diff <= 777600) {return "Hace 1 semana";}
+		var diff = Math.floor((user_date - system_date) / 1000);
+		if (diff <= 1) {return "ahora";}
+		if (diff < 20) {return "Hace "+ diff + " segundos";}
+		if (diff < 40) {return "Hace medio minuto";}
+		if (diff < 60) {return "Menos de un minuto";}
+		if (diff <= 90) {return "Hace un minuto";}
+		if (diff <= 3540) {return "Hace " + Math.round(diff / 60) + " minutos";}
+		if (diff <= 5400) {return "Hace 1 Hora";}
+		if (diff <= 86400) {return "Hace " + Math.round(diff / 3600) + " horas";}
+		if (diff <= 129600) {return "Hace 1 dia";}
+		if (diff < 604800) {return "Hace " + Math.round(diff / 86400) + " dias";}
+		if (diff <= 777600) {return "Hace 1 semana";}
 
-	    return convertDate(system_date);
+		return convertDate(system_date);
 	}
 
 	// from http://widgets.twimg.com/j/1/widget.js
 	var K = function () {
-    	var a = navigator.userAgent;
+		var a = navigator.userAgent;
 
-    	return {
-        	ie: a.match(/MSIE\s([^;]*)/)
-    	}
+		return {
+			ie: a.match(/MSIE\s([^;]*)/)
+		}
 	}();
 
 	function convertDate(inputFormat) {
-  		function pad(s) { return (s < 10) ? '0' + s : s; }
-  		var monthNames = [ "Ene", "Feb", "Mar", "Abr", "Mayo", "Jun",
-    		"Jul", "Agos", "Sep", "Oct", "Nov", "Dic" ];
-  		var d = new Date(inputFormat);
-  		return pad(d.getDate()) + " " + monthNames[d.getMonth()] + " " + d.getFullYear();
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var monthNames = [ "Ene", "Feb", "Mar", "Abr", "Mayo", "Jun",
+		"Jul", "Agos", "Sep", "Oct", "Nov", "Dic" ];
+		var d = new Date(inputFormat);
+		return pad(d.getDate()) + " " + monthNames[d.getMonth()] + " " + d.getFullYear();
 	}
 
 	function loadMore(ev){

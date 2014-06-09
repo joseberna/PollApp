@@ -40,57 +40,66 @@ $(function()
 		var idTransaction = getIdTransaccion();		
 
 		var sendData = {
-		
-		 "contextRequestDTO": {
-			  "applicationName": 'mobilePollapp',
-			  "idTransaction": idTransaction,
-			  "pageNumber": 0,
-			  "pageSize": 0,
-			  "userName": 'userMobilePollapp'
-			 },
-			 "userDTO": {
-			  "email": $("#email").val().trim(),
-			  "id": "",
-			  "lastName": $("#apellidos").val().trim(),
-			  "name": $("#nombres").val().trim(),
-			  "password": $("#password").val().trim()
-			 }
+			
+			"contextRequestDTO": {
+				"applicationName": 'mobilePollapp',
+				"idTransaction": idTransaction,
+				"pageNumber": 0,
+				"pageSize": 0,
+				"userName": 'userMobilePollapp'
+			},
+			"userDTO": {
+				"email": $("#email").val().trim(),
+				"id": "",
+				"lastName": $("#apellidos").val().trim(),
+				"name": $("#nombres").val().trim(),
+				"password": $("#password").val().trim()
+			}
 
 		};
 
-		var apiUrl = "https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser"
+		var apiUrl = Servicios.CreateUser
 
 		$.ajax({ 
-		 url: apiUrl, 
-		 dataType: 'json', 
-		 contentType: 'application/json; charset=utf-8', 
-		 type: "POST", 
-		 data: JSON.stringify(sendData),
-		 success: function(data) {		   
-		   saveDataUser(data); 
-		 }, 
-		 error: function(xhr, ajaxOptions, thrownError) { 
+			url: apiUrl, 
+			dataType: 'json', 
+			contentType: 'application/json; charset=utf-8', 
+			type: "POST", 
+			data: JSON.stringify(sendData),
+			success: function(data) {		   
+				saveDataUser(data); 
+				onAjaxComplete();
+			}, 
+			error: function(xhr, ajaxOptions, thrownError) { 
 
-		 	$('#msg').text("Error: "+ + xhr.status);
+				$('#msg').text("Error: "+ + xhr.status);
 
-		 	var mensaje = xhr.responseJSON.error.message
+				var mensaje = xhr.responseJSON.error.message
 
-		 	if (mensaje != undefined) {
+				if (mensaje != undefined) {
 
-				var indexInit = mensaje.indexOf(":");		 	
+					var indexInit = mensaje.indexOf(":");		 	
 
-		 		mensaje = mensaje.substring(indexInit + 2, mensaje.length);
+					mensaje = mensaje.substring(indexInit + 2, mensaje.length);
 
-		 		$('#msg').text($.trim(mensaje));
+					$('#msg').text($.trim(mensaje));
 
-		 	}
+				}
 
-			$('#msg').css({
-				visibility: 'visible'
-			});
+				$('#msg').css({
+					visibility: 'visible'
+				});
 
-		    console.log("Error: "+ + xhr.status);
-		 }   
+				console.log("Error: "+ + xhr.status);
+			},
+			beforeSend: function( xhr ) {
+				onAjaxLoad();
+			},
+			complete: function(xhr, textStatus ) {
+				if(textStatus !== 'success') {
+					onAjaxComplete();
+				}
+			} 
 		});
 
 	}
@@ -104,36 +113,36 @@ $(function()
 		console.log("User => "+ user.id);
 
 		if(typeof(Storage) != "undefined")
-  		{  	  			
+		{  	  			
 
-  			sessionStorage.setItem(keyStorage,
-  				JSON.stringify(user));
-  		}
+			sessionStorage.setItem(keyStorage,
+				JSON.stringify(user));
+		}
 		else
-  		{
-  			$('#msg').text("No soporta el sessionStorage");
+		{
+			$('#msg').text("No soporta el sessionStorage");
 
 			$('#msg').css({
 				visibility: 'visible'
 			});
-  		}
+		}
 
-  		$('#msg').css({
-				visibility: 'hidden'
+		$('#msg').css({
+			visibility: 'hidden'
 		});
 
-  		window.location.href = "../inicio.html";
+		window.location.href = "../inicio.html";
 
 	}
 
 	function validateEmail(email) { 
-    	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    	return re.test(email);
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
 	} 
 
 	function validatePassword(password) { 
-    	var re = /(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])((?=.*[A-Z])|(?=.*[a-z])).*$/;
-    	return re.test(password);
+		var re = /(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])((?=.*[A-Z])|(?=.*[a-z])).*$/;
+		return re.test(password);
 	} 
 
 	function onClickCreate(ev){
@@ -243,7 +252,7 @@ $(function()
 
 	function getIdTransaccion() {
 
-       return Math.random().toString(36).substring(10);
+		return Math.random().toString(36).substring(10);
 
 	}
 

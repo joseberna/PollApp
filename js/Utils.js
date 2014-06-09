@@ -14,7 +14,13 @@ var Servicios = {
 	getResultsMatch: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/matchendpoint/v1/getResultsMatch',
 	setResultMatchByUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/matchendpoint/v1/setResultMatchByUser',
 	getRanking: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/rankingendpoint/v1/getRanking',
-	getRankingByUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/rankingendpoint/v1/getRankingByUser'
+	getRankingByUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/rankingendpoint/v1/getRankingByUser',
+	voteByModel: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/modelendpoint/v1/voteByModel',
+	getURLImages: 'http://pollappus.storage.googleapis.com/',
+	getAllModels: 'https://dev-dot-pollappusinturik.appspot.com//_ah/api/modelendpoint/v1/getAllModelsActivePagination',
+	getAllTweetsPagination: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination2',
+	GetUserByEmailByPass: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass',
+	CreateUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser'
 };
 
 /*var Servicios = {
@@ -43,29 +49,22 @@ function saveSessionValue(key, value){
 	if(typeof(Storage) !== 'undefined') {
 		sessionStorage.setItem(key, value);
     	//window.localStorage.setItem(key, value);
-    } else {
-    	alert('No soporta el sessionStorage');
     }
 }
 
 function getSessionValue(key){
 	if(typeof(Storage) !== 'undefined') {
-		//TODO una vez la aplicacion este integrada con la gestion de usuario,
-		//comentariar este if/else y dejar el ultimo return
 		if(key === 'userLoginModel') {
-	    	return JSON.stringify({
-	    		id: 10,
-	    		name: 'juan',
-	    		lastName: 'Gomez Torres',
-	    		email: 'juan.gomez01@gmail.com'
-	    	});
-		} else {
+			return JSON.stringify({
+				id: 10,
+				name: 'juan',
+				lastName: 'Gomez Torres',
+				email: 'juan.gomez01@gmail.com'
+			});
+		} else {		
+			//return window.localStorage.getItem(key);
 			return sessionStorage.getItem(key);
 		}
-
-		//return sessionStorage.getItem(key);
-	} else {
-		alert('No soporta el sessionStorage');
 	}
 }
 
@@ -81,6 +80,14 @@ function formatDate(strDate) {
 	}
 
 	return strDate;
+}
+
+function onAjaxLoad() {
+	$('.ajax-load').css('display', 'block');
+}
+
+function onAjaxComplete() {
+	$('.ajax-load').css('display', 'none');
 }
 
 

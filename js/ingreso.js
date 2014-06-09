@@ -16,27 +16,44 @@ $(function()
 	{
 		var idTransaction = getIdTransaccion();
 
-		var apiUrl = "https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass?application=mobilePollapp&email=" + user + 
-			"&idTransaction=" + idTransaction + "&password=" + password + "&user=userMobilePollapp";
+		var apiUrl = Servicios.GetUserByEmailByPass;
 
 		$.ajax({ 
-		 url: apiUrl, 
-		 dataType: 'jsonp', 
-		 contentType: 'application/json', 
-		 type: "GET", 
-		 success: function(data) {		   
-		   saveDataUser(data); 
-		 }, 
-		 error: function(xhr, ajaxOptions, thrownError) { 
+			url: apiUrl, 
+			dataType: 'jsonp', 
+			contentType: 'application/json', 
+			type: "GET",
+			data: {
+				application: 'mobilePollapp',
+				idTransaction: idTransaction,
+				pageNumber: 0,
+				pageSize: 0,
+				user: defaultUserName,
+				email: user,
+				password: password
+			},
+			success: function(data) {		   
+				saveDataUser(data);
+				onAjaxComplete();
+			}, 
+			error: function(xhr, ajaxOptions, thrownError) { 
 
-		 	$('#msg').text("Error: "+ + xhr.status);
+				$('#msg').text("Error: "+ + xhr.status);
 
-			$('#msg').css({
-				visibility: 'visible'
-			});
+				$('#msg').css({
+					visibility: 'visible'
+				});
 
-		    console.log("Error: "+ + xhr.status);
-		 }   
+				console.log("Error: "+ + xhr.status);
+			},
+			beforeSend: function( xhr ) {
+				onAjaxLoad();
+			},
+			complete: function(xhr, textStatus ) {
+				if(textStatus !== 'success') {
+					onAjaxComplete();
+				}
+			}   
 		});
 
 	}
@@ -61,25 +78,25 @@ $(function()
 		}		
 
 		if(typeof(Storage) != "undefined")
-  		{  	  			
+		{  	  			
 
-  			sessionStorage.setItem(keyStorage,
-  				JSON.stringify(user));
-  		}
+			sessionStorage.setItem(keyStorage,
+				JSON.stringify(user));
+		}
 		else
-  		{
-  			$('#msg').text("No soporta el sessionStorage");
+		{
+			$('#msg').text("No soporta el sessionStorage");
 
 			$('#msg').css({
 				visibility: 'visible'
 			});
-  		}
+		}
 
-  		$('#msg').css({
-				visibility: 'hidden'
+		$('#msg').css({
+			visibility: 'hidden'
 		});
 
-  		window.location.href = "../inicio.html";
+		window.location.href = "../inicio.html";
 
 	}
 
@@ -115,13 +132,7 @@ $(function()
 
 		validateUser($("#email").val().trim(), $("#password").val().trim());
 
-	}
-
-	function getIdTransaccion() {
-
-       return Math.random().toString(36).substring(10);
-
-	}
+	}	
 
 
 });

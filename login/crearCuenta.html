@@ -24,53 +24,59 @@
     <script src="../js/vendor/jquery-2.1.0.min.js"></script>     
     <!-- Crear Cuenta JS -->
     <script src="../js/crearCuenta.js"></script>
+    <!-- JS de utilidades -->
+    <script src="../js/Utils.js"></script>
 
 </head>
 <body>
-    <header class="cabecera">            
-        <div class="logo">
-            <img id="poll_head" src="../img/pollapp_header.png">
-        </div>                
-    </header>   
-    <section>
-        <aside>
-            <div class="imgUser">
-                <img src="../img/iniciosesion.png" alt="fondo_log" />
-            </div>
-            <div class="dataLogin">               
-                <p>
-                    <input id="nombres" type="text" placeholder="Nombres" required="required" maxlength="50"/>
-                </p>
-                <p>
-                    <input type="text" id="apellidos" type="text" placeholder="Apellidos" maxlength="50"/>
-                </p>  
-                 <p>
-                    <input id="email" type="email" placeholder="E-mail" required="required" maxlength="50"/>
-                </p>  
-                 <p>
-                    <input type="password" id="password" type="text" placeholder="Contraseña" maxlength="10"/>
-                </p>  
-                 <p>
-                    <input type="password" id="password2" type="text" placeholder="Repetir Contraseña" maxlength="10"/>
-                </p> 
-                <p>
-                    <label id="msg">                   
-                    </label>                    
-                </p>                 
-                <div>                               
-                    <a id="create" href="inicio.html" class="btn-create">
-                        <img id="btnCreate" src="../img/registrarme.png">
-                    </a>                    
-                </div>                    
-
-                
-            </div>
-        </aside>
-    </section> 
-    <footer>
-        <div>
-            <img src="../img/sponsors/50x300inturik.png" class="imgFooter">
+   <div class="ajax-load">
+    <!--<span class="ajax-load">Cargando...</span>-->
+    <img src='../img/loading2.gif' alt='Loading' />
+</div> 
+<header class="cabecera">            
+    <div class="logo">
+        <img id="poll_head" src="../img/pollapp_header.png">
+    </div>                
+</header>   
+<section>
+    <aside>
+        <div class="imgUser">
+            <img src="../img/iniciosesion.png" alt="fondo_log" />
         </div>
-    </footer>     
+        <div class="dataLogin">               
+            <p>
+                <input id="nombres" type="text" placeholder="Nombres" required="required" maxlength="50"/>
+            </p>
+            <p>
+                <input type="text" id="apellidos" type="text" placeholder="Apellidos" maxlength="50"/>
+            </p>  
+            <p>
+                <input id="email" type="email" placeholder="E-mail" required="required" maxlength="50"/>
+            </p>  
+            <p>
+                <input type="password" id="password" type="text" placeholder="Contraseña" maxlength="10"/>
+            </p>  
+            <p>
+                <input type="password" id="password2" type="text" placeholder="Repetir Contraseña" maxlength="10"/>
+            </p> 
+            <p>
+                <label id="msg">                   
+                </label>                    
+            </p>                 
+            <div>                               
+                <a id="create" href="inicio.html" class="btn-create">
+                    <img id="btnCreate" src="../img/registrarme.png">
+                </a>                    
+            </div>                    
+
+            
+        </div>
+    </aside>
+</section> 
+<footer>
+    <div>
+        <img src="../img/sponsors/50x300inturik.png" class="imgFooter">
+    </div>
+</footer>     
 </body>
 </html>

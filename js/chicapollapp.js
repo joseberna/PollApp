@@ -27,25 +27,44 @@ $(function()
 	function getDataModels()
 	{
 
-		var apiUrl = "https://1-dot-logical-light-488.appspot.com/_ah/api/modelendpoint/v1/getAllModelsActive"; 
+		var apiUrl = Servicios.getAllModels;
+		var idTransaccion = getIdTransaccion();
+
+		console.log(apiUrl);
 
 		$.ajax({ 
 		 url: apiUrl, 
 		 dataType: 'jsonp', 
 		 contentType: 'application/json', 
 		 type: "GET", 
+		 data: {
+				application: 'mobilePollapp',
+				idTransaction: idTransaccion,
+				pageNumber: 0,
+				pageSize: 0,
+				user: defaultUserName
+		 },
 		 success: function(data) {		   
 		   dataModelsApi = data;
-		   gridGenerate(data);	   
+		   gridGenerate(data);
+
+		   onAjaxComplete();
 		 }, 
-		 error: function(xhr, ajaxOptions, thrownError) { 		   
-		   console.log("Error: "+ + xhr.status);
-		 }   
+		 error: function(xhr, ajaxOptions, thrownError) {		   
+		   alert("Error: " + xhr.status)
+		 },
+		 beforeSend: function( xhr ) {
+				onAjaxLoad();
+		 },
+		 complete: function(xhr, textStatus ) {
+				if(textStatus !== 'success') {
+					onAjaxComplete();
+				}
+		}
+
 		});
 
 	}
-
-
 
 	function gridGenerate(dataModels)
 	{
@@ -55,7 +74,7 @@ $(function()
 		var lastDiv;
 		var link;
 		var img;
-		var pathImgCloud = "http://pollapp.storage.googleapis.com/";
+		var pathImgCloud = Servicios.getURLImages;
 
 		$.each(dataModels.models, function(i, val) 
 		{		

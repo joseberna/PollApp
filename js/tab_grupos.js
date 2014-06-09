@@ -30,8 +30,14 @@ $(function() {
         $('.title h3').html($(this).data('label'));
         var round = $(this).data('round');
 
-        if(parseInt(round) === 1) {
+        //if (parseInt(round) == 1) {return};
+        console.log("Entro"); 
+
+        cargarPartidos(round);
+
+        /*if(parseInt(round) === 1) {
             console.log(this.href); 
+            console.log("Entro 1"); 
             var url = this.href;        
             //var pos = url.lastIndexOf('/');
             //var urlAux = url.substring((pos+1));
@@ -47,8 +53,9 @@ $(function() {
                 }
             });
         } else {
+            console.log("Entro else"); 
             cargarPartidos(round);
-        }
+        }*/
 
     	return false;
     });
@@ -139,9 +146,10 @@ $(function() {
                     '</br><span>'+partido.teamB+'</span>'+
                 '</div>'+
             '</div>'+
+            'Grupo '+partido.nameGroup+'</br>'+
             formatDate(partido.date)+' - '+partido.hour+'</br>'+
-            partido.stadium+'</br></br>');
-    }
+            partido.stadium+'</br></br> ---------------------------------------');
+    }    
 
     function ingresarMarcador(e) {
         var _this = $(e.target);

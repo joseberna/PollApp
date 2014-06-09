@@ -12,5 +12,5 @@ section .posts .post .description .details .screenName{color:grisOscuro;font-siz
 section .posts .post .description .details .text{margin:.5em .5em .5em 0;text-align:justify}
 section .posts .post .description .imagen{float:left;}
 section .posts .post .description .imagen img{padding:.5em 0 .5em .5em;vertical-align:top}
-section .loadMore{background:#2b1b4b;text-align:center;width:100%;}
+section .loadMore{background:#2b1b4b;height:5%;text-align:center;width:100%;}
 section .loadMore a{color:#fff;height:3%;text-decoration:none;vertical-align:middle}

@@ -4,29 +4,60 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>PollApp - Mis inviitaciones</title>
+        <title>PollApp - Mis Invitaciones</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">       
         <!-- Normalize css -->
         <link rel="stylesheet" href="../css/normalize.css"> 
         <link rel="stylesheet" href="../css/demo.css">        
-        <!-- Pushy CSS -->
-        <link rel="stylesheet" href="../css/pushy.css">
+       
         <!-- Style CSS -->
-        <link rel="stylesheet" href="../css/style.css">    
+        <link rel="stylesheet" href="../css/style.css">  
+        <!-- Pushy CSS -->
+        <link rel="stylesheet" href="../css/pushy.css">  
         <!-- Chicas Pollapp css -->
         <link rel="stylesheet" href="../css/pendientes.css">
 
         <script src="../js/mis_invitaciones.js"></script>  
         <!-- JS de utilidades -->
-        <script src="../js/Utils.js"></script>      
+        <script src="../js/Utils.js"></script>
+         <!-- jQuery -->        
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <!-- Modernizr -->
+        <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- Pushy JS -->
+        <script src="../js/pushy.min.js"></script>
+        <!-- jquery mobile -->
+        <link rel="stylesheet" href="../css/vendor/jquery.mobile-1.4.2.min.css">    
+        
     </head>
     <body>
+         <!-- Pushy Menu -->
+                <nav class="pushy pushy-left">
+                    <ul>
+                         <li><a href="../inicio.html">Inicio</a></li>
+                    <li><a href="../4grupos/partidos.html">PollApp</a></li>
+                    <li class="subtitulo"><a href="../1polla/mis_pollas.html" >Mis Pollas</a></li>
+                    <li class="subtitulo"><a href="../1polla/crea_pollas.html" >Crear Polla</a></li>
+                    <li class="subtitulo"><a href="../1polla/mis_invitaciones.html" >Mis Invitaciones</a></li>
+                    <li><a href="../2chicaspollapp/chicapollapp.html">Chica PollApp</a></li>
+                    <li><a href="grupos.html">Mundial-2014</a></li>
+                    <li><a href="../3noticias/noticias.html">Noticias</a></li>
+                    <li><a href="../terminos.html">Reglas Y Condiciones</a></li>
+                    </ul>
+                </nav>
+                <header class="cabecera">
+                    <!-- Menu Button -->
+                    <div class="menu-btn"></div>
+                    <div class="logo">
+                        <img id="poll_head" src="../img/pollapp_header.png">
+                    </div>                
+                </header>
          <div class="ajax-load">
             <!--<span class="ajax-load">Cargando...</span>-->
             <img src='../img/loading2.gif' alt='Loading' />
         </div>
-        <section>            
+        <section class="pendientes">            
 
             <!-- Site Overlay -->
             <!--<div class="site-overlay"></div>-->
@@ -37,5 +68,10 @@
                 </ul>
             </div>
         </section>
+         <footer>
+                    <div>
+                         <img src="../img/sponsors/50x300inturik.png" class="imgFooter">
+                    </div>
+                </footer>
     </body>
 </html>
