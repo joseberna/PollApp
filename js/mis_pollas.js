@@ -6,7 +6,7 @@ $(function() {
 
 	  if(!data["contextResponse"].transactionState||!(data["lstPollaDTO"])){
 	  	//alert("Es posible que el usuario no tenga pollas asociadas o en el momento o no haya respuesta del servidor, por favor intente creando una polla, de lo contrario comuniquese con el administrador del sistema");
-	  	$('#myPollas').html("No tienes pollas asociadas o en el momento.");
+	  	$('#myPollas').html("Empieza a jugar tu polla futbolera.");
 	  	return;
 	  }
 

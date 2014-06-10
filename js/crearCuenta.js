@@ -8,32 +8,11 @@ $(function()
 		visibility: 'hidden'
 	});
 
-	$("#nombres").val("").focus();
+	$("#nombres").val("");
 	$("#apellidos").val("");
 	$("#email").val("");
 	$("#password").val("");
-	$("#password2").val("");
-
-	$("#nombres").focusout(function(event) {		
-		validateControls(event);
-	});
-
-	$("#apellidos").focusout(function(event) {		
-		validateControls(event);
-	});
-
-	$("#email").focusout(function(event) {		
-		validateControls(event);
-	});
-
-	$("#password").focusout(function(event) {		
-		validateControls(event);
-	});
-
-	$("#password2").focusout(function(event) {		
-		validateControls(event);
-	});
-	
+	$("#password2").val("");	
 
 	function registerUser()
 	{
@@ -196,6 +175,8 @@ $(function()
 
 			$("#password").focus();
 
+			alert("La contraseña debe tener mínimo 6 caracteres, con una letra y un número");
+
 			$('#msg').text("6 caracteres una letra y un número");
 
 			$('#msg').css({
@@ -216,11 +197,7 @@ $(function()
 			
 			$("#password").focus();
 
-			$('#msg').text("Las contraseñas no son las mismas");
-
-			$('#msg').css({
-				visibility: 'visible'
-			});	
+			alert("Las contraseñas no son las mismas");			
 
 			return false;
 		}
@@ -237,11 +214,7 @@ $(function()
 
 		if ($(idAttr).val().trim() == ''){
 
-			$('#msg').text("Por favor ingrese " + nameAttr);
-
-			$('#msg').css({
-				visibility: 'visible'
-			});	
+			alert("Por favor ingrese " + nameAttr);			
 
 			return false;		
 		}
