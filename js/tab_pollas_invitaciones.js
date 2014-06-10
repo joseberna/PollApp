@@ -1,5 +1,5 @@
 $(function()
-{	
+{	    
 
    $("#nav li a").click(function() {
  
@@ -11,7 +11,7 @@ $(function()
         var pos = url.lastIndexOf('/');
         var urlAux = url.substring((pos+1));
         console.log(urlAux);
-	    //$.ajax({ url: this.href, async:true, global:false,success: function(html) {
+	    
         $.ajax({ url: urlAux, async:true, global:false,success: function(html) {
             $("#ajax-content").empty().append(html);
     		}

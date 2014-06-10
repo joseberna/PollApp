@@ -8,7 +8,7 @@ $(function()
 		visibility: 'hidden'
 	});
 
-	$("#nombres").val("").focus();
+	$("#nombres").val("");
 	$("#apellidos").val("");
 	$("#email").val("");
 	$("#password").val("");
@@ -255,6 +255,11 @@ $(function()
 		return Math.random().toString(36).substring(10);
 
 	}
+
+	$('.volver-btn').click(function() {
+        event.preventDefault(); 
+        history.back(1); 
+    });
 
 
 });

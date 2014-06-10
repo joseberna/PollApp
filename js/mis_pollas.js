@@ -37,6 +37,10 @@ $(function() {
 		var idTransaccion = getIdTransaccion();
         var idUser = getIdUser();
 
+
+        console.log("APIURL >> "+apiUrl);
+        console.log("idUser >> "+idUser);
+
 		$.ajax({
 			url: apiUrl, 
 			dataType: 'jsonp', 
