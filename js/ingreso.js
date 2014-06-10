@@ -96,7 +96,7 @@ $(function()
 			visibility: 'hidden'
 		});
 
-		window.location.href = "../inicio.html";
+		window.location.href = "inicio.html";
 
 	}
 
