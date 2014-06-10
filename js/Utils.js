@@ -1,8 +1,31 @@
 var defaultUserName = 'pollappMobile';
 
-//'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/',
-//URLS Finales
+//Urls produccion
 var Servicios = {
+	addPolla: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
+	addGuestPolla: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
+	getAllGuestUsers: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
+	removeGuestUser:'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/removeGuestUser',
+	updateAcceptedInvitation: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/updateAcceptedInvitation',
+	getGuestByUser: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getGuestByUser',
+	getPollasByUser: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getPollasByUser',
+	getMatchsByRound: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/matchendpoint/v1/getMatchsByRound',
+	getResultsMatch: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/matchendpoint/v1/getResultsMatch',
+	setResultMatchByUser: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/matchendpoint/v1/setResultMatchByUser',
+	getRanking: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/rankingendpoint/v1/getRanking',
+	getRankingByUser: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/rankingendpoint/v1/getRankingByUser',
+	voteByModel: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/modelendpoint/v1/voteByModel',
+	getURLImages: 'http://pollappus.storage.googleapis.com/',
+	getAllModels: 'https://prd-dot-pollappusinturik.appspot.com//_ah/api/modelendpoint/v1/getAllModelsActivePagination',
+	getAllTweetsPagination: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination2',
+	GetUserByEmailByPass: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass',
+	CreateUser: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser'
+};
+
+
+
+//URLS Finales
+/*var Servicios = {
 	addPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
 	addGuestPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
 	getAllGuestUsers: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
@@ -21,17 +44,8 @@ var Servicios = {
 	getAllTweetsPagination: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination2',
 	GetUserByEmailByPass: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass',
 	CreateUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser'
-};
-
-/*var Servicios = {
-	addPolla: 'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
-	addGuestPolla: 'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
-	getAllGuestUsers: 'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
-	removeGuestUser: 'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/removeGuestUser',
-	updateAcceptedInvitation: 'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/updateAcceptedInvitation',
-	getGuestByUser: 'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/getGuestByUser',
-	getPollasByUser: 'https://dev-dot-logical-light-488.appspot.com/_ah/api/pollasendpoint/v1/getPollasByUser'
 };*/
+
 
 function getIdUser() {
 	var userDTO = getSessionValue('userLoginModel');
