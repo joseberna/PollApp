@@ -119,8 +119,7 @@ $(function()
 					//se llena la tabla de los resultados
 					table += '</table>';
 					//console.log(table);
-					$('#ajax-content').html(table);
-					registerResult();
+					$('#ajax-content').html(table);					
 				} else {
 					$('#ajax-content').html('<span class="titulos">Se el primero en dar el marcador.</span>');
 				}
@@ -138,14 +137,15 @@ $(function()
 						+'<tr class="tdrow">'
 							+'<td class ="tdrowteam"></td>'
 							+'<td class ="tdrowteam"><img src="../img/flags/'+imgA+'"></td>'
-							+'<td class ="tdrowteam"><input id="resultteamA" name="resultteamA" value="'+resulttA+'" type="text" ></td>'
+							+'<td class ="tdrowteam"><input id="resultteamA" name="resultteamA" value="'+resulttA+'" type="text" maxlength="1" onkeypress="return isNumberKey(this);"></td>'
 							+'<td class ="tdrowteam"></td>'
 							+'<td class ="tdrowteam"><img src="../img/flags/'+imgB+'"></td>'
-							+'<td class ="tdrowteam"><input id="resultteamB" name="resultteamB" value="'+resulttB+'" type="text" ></td>'
+							+'<td class ="tdrowteam"><input id="resultteamB" name="resultteamB" value="'+resulttB+'" type="text" maxlength="1" onkeypress="return isNumberKey(this);"></td>'
 							+'<td class ="tdrowteam"><img class="btnGuardar" src="../img/GUARDAR.png" id = "saveresults"></td>'
 						+'</tr>'
 						+'</table>');
 
+				registerResult();
 				onAjaxComplete();
 			}, 
 			error: function(xhr, ajaxOptions, thrownError) {

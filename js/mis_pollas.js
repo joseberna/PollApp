@@ -18,7 +18,15 @@ $(function() {
 	    //$('#listMyPolla').append('<li><div class="container_list"><div class="div_left"><a href="polla.html?id='+polla.id+'">'+polla.nombre+'</a></div><div class="div_right"><a href="integrantes.html?id='+polla.id+'">'+Ver integrantes+'</a></div></div></li>')
 	   	//$('#listMyPolla').append('<li><div class="container_list"><div class="div_left"><a href="polla.html?id='+polla.id+'">'+(index+1)+'. '+polla.nombre+'</a></div><div class="div_right"><a href="integrantes.html?id='+polla.id+'">Ver integrantes</a></div></div></li>');	   	
 	   	polla.name = (polla.name===null||polla.name===undefined||polla.name===""||polla.name.length===0)?"Sin nombre":polla.name;
-	   	$('#listMyPolla').append('<li><div class="container_list"><a class="a-polla-left" href="../4grupos/tab_grupos.html?id='+polla.id+'"><b>'+(index+1)+'. '+polla.name+'</b></a><a class="a-polla-right" href="../6integrantes/integrantes.html?id='+polla.id+'&nombre='+polla.name+'&idUserAdmin='+polla.idUserAdmin+'"><img src="../img/VERAMIGOS.png"></img></a></div></li>');
+	   	$('#listMyPolla').append('<li>'+
+	   		'<div class="container_list">'+
+	   		'<a class="a-polla-left" href="../4grupos/tab_grupos.html?id='+polla.id+'">'+
+	   		'<b>'+(index+1)+'. '+polla.name+'</b>'+
+	   		'</a>'+
+	   		'<a class="a-polla-right" href="../7ranking/ranking.html?idPolla='+polla.id+'"><img src="../img/RANKING.png"></img></a>'+
+	   		'<a class="a-polla-right" href="../6integrantes/integrantes.html?id='+polla.id+'&nombre='+polla.name+'&idUserAdmin='+polla.idUserAdmin+'"><img src="../img/VERAMIGOS.png"></img></a>'+
+	   		'</div>'+
+	   		'</li>');
 		//$('#listMyPolla').append('<li><div class=\"container_list\"><div class=\"div_left\"><a href=\"polla.html?id='+polla.id+'\">'+polla.nombre+'</a></div><div class=\"div_right\"><a href=\"integrantes.html?id='+polla.id+'\">'+Ver integrantes+'</a></div></div></li>');		
 	  });
 	};

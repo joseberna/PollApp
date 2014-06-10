@@ -60,8 +60,8 @@ $(function() {
     	return false;
     });
  
-    //se ejecuta el evento click de la fase de grupos para forzar la carga
-    $('#tab_grupos').trigger('click');
+    //se ejecuta el evento click en el primer tab para forzar la carga
+    $("#nav li a").first().trigger('click');
 
     $('.volver-btn').click(function() {
         event.preventDefault(); 

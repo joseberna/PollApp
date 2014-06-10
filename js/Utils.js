@@ -6,7 +6,7 @@ var Servicios = {
 	addPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
 	addGuestPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
 	getAllGuestUsers: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
-	removeGuestUser:' https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/removeGuestUser',
+	removeGuestUser:'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/removeGuestUser',
 	updateAcceptedInvitation: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/updateAcceptedInvitation',
 	getGuestByUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getGuestByUser',
 	getPollasByUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getPollasByUser',
@@ -80,6 +80,13 @@ function formatDate(strDate) {
 	}
 
 	return strDate;
+}
+
+function isNumberKey(evt) {
+	var charCode = (evt.which) ? evt.which : event.keyCode
+	if (charCode > 31 && (charCode < 48 || charCode > 57))
+		return false;
+	return true;
 }
 
 function onAjaxLoad() {

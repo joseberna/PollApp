@@ -234,6 +234,8 @@ $(document).ready(function() {
     function reiniciarFormulario() {
         $('#txtNombrePolla').val('');
         $('#txtNombrePolla').removeAttr('disabled');
+        idPolla = undefined;//identificador de la polla
+        nombrePolla = undefined;//nombre de la polla
         $(InputsWrapper).empty();
         adicionarPirmerCampoEmail();
     }

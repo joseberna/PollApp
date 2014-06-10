@@ -63,7 +63,7 @@ $( document ).ready(function() {
 	function fillDataDetailsUserRanking(data){
 		//console.log(data);
 
-		var data = {
+		/*var data = {
      "contextResponse": {
       "transactionDate": "2014-06-06T04:33:14.060Z",
       "transactionState": true,
@@ -133,13 +133,13 @@ $( document ).ready(function() {
      ],
      "kind": "rankingendpoint#resourcesItem",
      "etag": "\"Lv-BsuhKPadETAuVqf9M_SvumYw/e3BX3nbRPc7jzADAz7jBype2m_A\""
-    };
+    };*/
 
 
     try{
       if (data.lstRankingUserDTO.length > 0) {
 
-			$('#titleUser').text(data.lstRankingUserDTO[0].namesUser);
+			$('#titleUser').text(data.lstRankingUserDTO[0].namesUser+' '+data.lstRankingUserDTO[0].lastNameUser);
 
 			$.each(data.lstRankingUserDTO, function(index, value) {
 					$('#tbDetailsUserRanking').append(
@@ -154,6 +154,7 @@ $( document ).ready(function() {
         alert('Aun no ha ganado puntos.');
 			}
 		} catch(err){
+      console.log(err);
       alert('Ha ocurrido un problema realizando la consulta detalle ranking');
 		}
 		

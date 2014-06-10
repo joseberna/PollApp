@@ -8,7 +8,7 @@ $(function()
 		visibility: 'hidden'
 	});
 
-	$("#nombres").val("");
+	$("#nombres").val("").focus();
 	$("#apellidos").val("");
 	$("#email").val("");
 	$("#password").val("");
