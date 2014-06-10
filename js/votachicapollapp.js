@@ -79,7 +79,7 @@ $(function()
 				try {
 					if(data.contextResponse !== undefined && data.contextResponse.transactionState) {
 						
-						$(".numVotosChica").text(data.score +  'votos');
+						$(".numVotosChica").text(data.score +  ' votos');
 
 						alert('Gracias por tu voto');						
 
@@ -140,7 +140,7 @@ function loadImages()
 
 		dataModel = JSON.parse(sessionStorage.getItem(keyStorage));	
 
-		$(".numVotosChica").text(dataModel.score +  'votos');	
+		$(".numVotosChica").text(dataModel.score +  ' votos');	
 
 		$.each(dataModel.picturesModel, function(i, val)
 		{

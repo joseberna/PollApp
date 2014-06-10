@@ -49,11 +49,11 @@ var Servicios = {
 
 function getIdUser() {
 	var userDTO = getSessionValue('userLoginModel');
-	if(userDTO !== null) {
+	if(userDTO !== null) {		
 		userDTO = JSON.parse(userDTO);
 	}
 
-	if(userDTO !== undefined && userDTO !== null) {
+	if(userDTO !== undefined && userDTO !== null) {		
 		return userDTO.id;
 	}
 }
@@ -68,7 +68,8 @@ function saveSessionValue(key, value){
 
 function getSessionValue(key){
 	if(typeof(Storage) !== 'undefined') {
-		if(key === 'userLoginModel') {
+		if(key !== 'userLoginModel') {
+			console.log("Usuario dummy");
 			return JSON.stringify({
 				id: 10,
 				name: 'juan',
@@ -76,7 +77,7 @@ function getSessionValue(key){
 				email: 'juan.gomez01@gmail.com'
 			});
 		} else {		
-			//return window.localStorage.getItem(key);
+			console.log("Usuario del storage");
 			return sessionStorage.getItem(key);
 		}
 	}
