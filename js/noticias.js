@@ -95,7 +95,16 @@ $(function()
 		</div> \
 		</article>';
 
+		//searchURLText(text);
+
 		return template;
+	}
+
+	function searchURLText(textTweet){
+
+		//var a = textTweet.contains('http');
+		console.log("HTTP >> " + textTweet);
+
 	}
 
 	function parseTwitterDate(tdate) {

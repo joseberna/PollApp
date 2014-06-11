@@ -17,20 +17,23 @@
       <!-- Style CSS -->
       <link rel="stylesheet" href="../css/style.css">
 
-      <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
       <!-- Modernizr -->
       <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
       <!-- Pushy JS -->
       <script src="../js/pushy.min.js"></script>
       <!-- JQuery -->
       <script src="../js/vendor/jquery-2.1.0.min.js"></script> 
+      <!-- JS de utilidades -->
+      <script src="../js/Utils.js"></script> 
 
-      <script type="text/javascript">
+      <script>
 
-      $('.volver-btn').click(function() {
+      $(document).ready(function(){
+       $('.volver-btn').click(function() {
         event.preventDefault(); 
         history.back(1); 
       });
+     });       
 
       </script>
 
@@ -40,7 +43,7 @@
       <nav class="pushy pushy-left">
        <ul>
         <li><a href="../inicio.html">Inicio</a></li>
-        <li><a href="../1polla/tab_pollas_invitaciones">PollApp</a></li>
+        <li><a href="../1polla/tab_pollas_invitaciones.html">PollApp</a></li>
         <li><a href="../2chicaspollapp/chicapollapp.html">Chica PollApp</a></li>
         <li><a href="../4grupos/grupos.html">Mundial-2014</a></li>
         <li><a href="../3noticias/noticias.html">Noticias</a></li>
@@ -63,7 +66,7 @@
         <a href="grupoa.html"><h1>GRUPO A</h1></a>	
         <div>
          <img src="../img/flags/Brasil.png">
-        </div>
+       </div>
        <div>
          <h2>Brasil</h2>
        </div>

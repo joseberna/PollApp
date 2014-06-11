@@ -4,7 +4,7 @@ body{
 	background-image:url("../img/fondos/480x800-android-polla.png");
 	color: #2B2978;
 }
-section{height:73%;margin-left: 10px;margin-right: 10px;}
+section{height:73%;margin-left: 10px;margin-right: 10px;padding: 0 0 .5em 0;}
 /*section .modelsGrid{height:95%;overflow-y:scroll;}
 section .modelsGrid div{text-align:center}
 section .modelsGrid .modelPhoto{border:5px #e1b800 solid;height:80%;width:80%}*/
