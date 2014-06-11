@@ -9,31 +9,7 @@ $(function()
 	});
 
 	$("#email").val("");
-	$("#password").val("");
-
-	$("#email").focusin(function(event) {		
-		$(".imgFooter").css({
-			visibility: 'hidden'
-		});
-	});
-
-	$("#password").focusin(function(event) {
-		$(".imgFooter").css({
-			visibility: 'hidden'
-		});
-	});
-
-	$("#email").focusout(function(event) {		
-		$(".imgFooter").css({
-			visibility: 'visible'
-		});
-	});
-
-	$("#password").focusout(function(event) {
-		$(".imgFooter").css({
-			visibility: 'visible'
-		});
-	});
+	$("#password").val("");	
 
 	function validateUser(user, password)
 	{

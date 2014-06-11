@@ -3,7 +3,7 @@ body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-
 input[type=image], img {
  border: none;
     display: inline;
-    height: 6%;
+    /*height: 6%;*/
     margin-left: 2%;
     vertical-align: middle;
     width: 6%;

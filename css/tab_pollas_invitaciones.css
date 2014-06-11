@@ -64,7 +64,7 @@ section .modelsGrid .modelPhoto{border:5px #e1b800 solid;height:80%;width:80%}*/
 input[type=image], img {
 	border: none;
     display: inline;
-    height: 6%;
+    /*height: 6%;*/
     margin-left: 2%;
     vertical-align: middle;
     width: 6%;
@@ -73,7 +73,7 @@ input[type=image], img {
 a img {
 	border: none;
     display: inline;
-    height: 60%;
+    /*height: 60%;*/
     margin-left: 2%;
     vertical-align: middle;
     width: 60%;

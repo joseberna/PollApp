@@ -36,7 +36,7 @@ input[type=text] {
 input[type=image], img {
 	border: none;
     display: inline;
-    height: 6%;
+    /*height: 6%;*/
     margin: 2%;
     vertical-align: middle;
     /*text-align: right;*/

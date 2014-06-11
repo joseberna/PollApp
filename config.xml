@@ -21,6 +21,7 @@
     <preference name="target-device" value="handset" />
     <preference name="auto-hide-splash-screen" value="false" />
     <preference name="permissions" value="none"/>
+    <preference name="android-windowSoftInputMode" value="adjustPan" />
 
     <!-- Android icons -->
     <icon src="Resources/icons/android/36x36.png"  gap:platform="android" gap:density="ldpi" />

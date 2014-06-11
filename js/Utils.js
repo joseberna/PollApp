@@ -1,7 +1,7 @@
 var defaultUserName = 'pollappMobile';
 
 //Urls produccion
-var Servicios = {
+/*var Servicios = {
 	addPolla: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
 	addGuestPolla: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
 	getAllGuestUsers: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
@@ -20,12 +20,12 @@ var Servicios = {
 	getAllTweetsPagination: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination2',
 	GetUserByEmailByPass: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass',
 	CreateUser: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser'
-};
+};*/
 
 
 
 //URLS Finales
-/*var Servicios = {
+var Servicios = {
 	addPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
 	addGuestPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
 	getAllGuestUsers: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
@@ -44,11 +44,12 @@ var Servicios = {
 	getAllTweetsPagination: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination2',
 	GetUserByEmailByPass: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass',
 	CreateUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser'
-};*/
+};
 
 
 function getIdUser() {
 	var userDTO = getSessionValue('userLoginModel');
+
 	if(userDTO !== null) {		
 		userDTO = JSON.parse(userDTO);
 	}
@@ -67,8 +68,9 @@ function saveSessionValue(key, value){
 }
 
 function getSessionValue(key){
-	if(typeof(Storage) !== 'undefined') {
-		if(key !== 'userLoginModel') {
+	if(typeof(Storage) !== 'undefined') {	
+		//TODO QUITAR EL COMENTARIO DE ESTE BLOQUE PARA CASOS DE PRUEBA CON USUARIOS PREDEFINIDOS
+		/*if(key === 'userLoginModel') {
 			console.log("Usuario dummy");
 			return JSON.stringify({
 				id: 10,
@@ -79,7 +81,9 @@ function getSessionValue(key){
 		} else {		
 			console.log("Usuario del storage");
 			return sessionStorage.getItem(key);
-		}
+		}*/
+
+		return sessionStorage.getItem(key);
 	}
 }
 
