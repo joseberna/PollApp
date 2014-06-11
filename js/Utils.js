@@ -1,7 +1,7 @@
 var defaultUserName = 'pollappMobile';
 
 //Urls produccion
-/*var Servicios = {
+var Servicios = {
 	addPolla: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
 	addGuestPolla: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
 	getAllGuestUsers: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
@@ -20,12 +20,12 @@ var defaultUserName = 'pollappMobile';
 	getAllTweetsPagination: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination2',
 	GetUserByEmailByPass: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass',
 	CreateUser: 'https://prd-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser'
-};*/
+};
 
 
 
 //URLS Finales
-var Servicios = {
+/*var Servicios = {
 	addPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addPolla',	
 	addGuestPolla: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/addGuestPolla',
 	getAllGuestUsers: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/pollasendpoint/v1/getAllGuestUsers',
@@ -44,7 +44,7 @@ var Servicios = {
 	getAllTweetsPagination: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/socialnetworkendpoint/v1/getAllTweetsPagination2',
 	GetUserByEmailByPass: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/getUserByEmailByPass',
 	CreateUser: 'https://dev-dot-pollappusinturik.appspot.com/_ah/api/userendpoint/v1/createUser'
-};
+};*/
 
 
 function getIdUser() {
