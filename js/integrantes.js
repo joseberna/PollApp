@@ -104,7 +104,7 @@ $(document).ready(function() {
         //console.log(integrante);
         $('#divIntegrantes').append(
             '<div>'+
-            '<span>'+(index+1)+'. '+(integrante.user ? integrante.user.name+' '+integrante.user.name : integrante.email)+'</span>'+
+            '<span>'+(index+1)+'. '+(integrante.user ? integrante.user.name+' '+integrante.user.lastName : integrante.email)+'</span>'+
             //'<button class="removeclass">-</button>'+ 
             (!integrante.accepted && esUsuarioAdmnistrador ? '<input type="image" class="removeclass" src="../img/basura.png" data-user="'+integrante.id+'">' : '<img></img>')+
             '<img src="../img/'+(integrante.accepted ? 'chulo' : 'equix')+'.png"></img>'+

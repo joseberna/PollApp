@@ -137,11 +137,10 @@ $( document ).ready(function() {
 
 
     try{
-      if (data.lstRankingUserDTO.length > 0) {
+      if (data.lstRankingUserDTO !== undefined && data.lstRankingUserDTO.length > 0) {
+        $('#titleUser').text(data.lstRankingUserDTO[0].namesUser+' '+data.lstRankingUserDTO[0].lastNameUser);
 
-			$('#titleUser').text(data.lstRankingUserDTO[0].namesUser+' '+data.lstRankingUserDTO[0].lastNameUser);
-
-			$.each(data.lstRankingUserDTO, function(index, value) {
+        $.each(data.lstRankingUserDTO, function(index, value) {
 					$('#tbDetailsUserRanking').append(
 						'<tr><td class="trow date" colspan="7"><label>'+value.dateMatch.substr(0,10)+'</label></td>'+
 						'<tr><td class="trow team" colspan="3"><label>'+value.nameTeamA+'</label></td></td><td><label>VS.</label></td><td class="trow team"  colspan="3"><label>'+value.nameTeamB+'</label></td></tr>'+
@@ -150,8 +149,8 @@ $( document ).ready(function() {
 						'</tr>'*/
 					);
 				});		
-			} else {
-        alert('Aun no ha ganado puntos.');
+			} else {        
+        $('#tbDetailsUserRanking').html('<tr><td>Aun no ha ganado puntos.</td></tr>');
 			}
 		} catch(err){
       console.log(err);

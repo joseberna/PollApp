@@ -74,9 +74,10 @@ $(document).ready(function() {
                 value = $(value).find('input').val();
                 emails.push(value);
             });
-            //console.log('emails>>'+emails);
+            
             var idTransaccion = getIdTransaccion();
             var idUser = getIdUser();
+            var htmlHREF = "";
 
             //si es una polla nueva
             if(idPolla === undefined) {
@@ -95,6 +96,9 @@ $(document).ready(function() {
                     "idUser": idUser,
                     "namePolla": $('#txtNombrePolla').val()
                 };
+
+                htmlHREF = "../1polla/tab_pollas_invitaciones.html";
+
             //si se estan adicionando usuarios a la polla
             } else {
                 apiUrl = Servicios.addGuestPolla;
@@ -111,6 +115,9 @@ $(document).ready(function() {
                     "idUserAdmin": idUser,
                     "emails": emails,
                 };
+
+                htmlHREF = "../6intregrantes/integrantes.html";
+
             }
 
             console.log(JSON.stringify(sendData));            
@@ -131,8 +138,10 @@ $(document).ready(function() {
                         if(data.contextResponse !== undefined && data.contextResponse.transactionState) {
                             if(idPolla === undefined) {
                                 alert('Polla creada exitosamente.');
+                                window.location.href = htmlHREF;
                             } else {
                                 alert('Invitaciones enviadas exitosamente.');
+                                window.location.href = htmlHREF;
                             }
 
                             reiniciarFormulario();
@@ -157,11 +166,12 @@ $(document).ready(function() {
                 },
                 complete: function(xhr, textStatus ) {
                     if(textStatus !== 'success') {
-                        onAjaxComplete();
+                        onAjaxComplete();                        
                     }
                 }
             });
-        }
+            
+        }        
 
         return false;
     });
