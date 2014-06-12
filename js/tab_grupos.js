@@ -152,18 +152,25 @@ $(function() {
     }    
 
     function ingresarMarcador(e) {
-        var _this = $(e.target);
-        var parentDiv = _this.parents('div.ui-grid-b.gri_grupos');
-        console.log('parentDiv', parentDiv);
-        parentDiv = parentDiv === null || parentDiv === undefined ? _this : parentDiv;
+        try {
+            //e.preventDefault();
+            var _this = $(e.target);
+            var parentDiv = _this.parents('div.ui-grid-b.gri_grupos');
+            console.log('parentDiv', parentDiv);
+            parentDiv = parentDiv === null || parentDiv === undefined ? _this : parentDiv;
 
-        var params = 'teamA='+parentDiv.data('teama')+'&teamB='+parentDiv.data('teamb')+
-            '&imgA='+parentDiv.data('imga')+'&imgB='+parentDiv.data('imgb')+
-            '&date='+parentDiv.data('date')+'&idPolla='+parentDiv.data('idpolla')+
-            '&idMatch='+parentDiv.data('idmatch');
-        console.log(params);
+            var params = encodeURIComponent('teamA='+parentDiv.data('teama')+'&teamB='+parentDiv.data('teamb')+
+                '&imgA='+parentDiv.data('imga')+'&imgB='+parentDiv.data('imgb')+
+                '&date='+parentDiv.data('date')+'&idPolla='+parentDiv.data('idpolla')+
+                '&idMatch='+parentDiv.data('idmatch'));
 
-        window.location.href = '../8partidosporfecha/partidosporfecha.html?'+params;
+            console.log(params);
+
+            window.location.href = '../8partidosporfecha/partidosporfecha.html?'+params;
+            //window.location.href = '../8partidosporfecha/partidosporfecha.html?';
+        } catch(err) {
+            alert('Ha ocurrido un error inesperado desplegando la pantalla de marcadores. '+err);
+        }
     }
 
     function onAjaxLoad() {    

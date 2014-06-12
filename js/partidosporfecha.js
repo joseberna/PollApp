@@ -1,14 +1,12 @@
 
-$(function()
-{		
-
+$(function() {
 	var Request = new function () {
         /// <summary>
         /// Obtiene parámetros de distintas fuentes.
         /// </summary>
         var params = [];
         var query = window.location.search.substring(1);
-        query = unescape(query);
+        query = decodeURIComponent(query);
         var vars = query.split("&");
         for (var i = 0; i < vars.length; i++) {
             var pair = vars[i].split("=");
@@ -43,18 +41,21 @@ $(function()
 	idUser = 10;*/
 	
 	$('#fechaPartido').html(pDate);
-
 	$('.volver-btn').click(function() {
-        event.preventDefault(); 
-        history.back(1); 
+        event.preventDefault();
+        history.back(1);
     });
 
-	getDataFriends();
-	function getDataFriends()
-	{
+	try {
+		getDataFriends();
+	} catch(err) {
+        alert('Ha ocurrido un error inesperado desplegando los marcadores. '+err);
+    }
+
+	function getDataFriends() {
 		//var apiUrl = "https://dev-dot-pollappusinturik.appspot.com/_ah/api/matchendpoint/v1/getResultsMatch?application=asas&idMatch="+idMatch+"&idPolla="+idPolla+"&idTransaction=sd&pageNumber=0&pageSize=0&user=jgomez";
 		var apiUrl = Servicios.getResultsMatch;
-		var idTransaccion = getIdTransaccion();
+		var idTransaccion = getIdTransaccion();		
 		$.ajax({ 
 			url: apiUrl, 
 			dataType: 'jsonp',
@@ -102,7 +103,7 @@ $(function()
 						trow +='			<tr><td class="tdrow tdrowres tdrowl">'+lstResultMatchDTOS.scoreTeamA+'</td><td class="tdrow tdrowres tdrowc"></td><td class="tdrow tdrowres tdrowr">'+lstResultMatchDTOS.scoreTeamB+'</td></tr>';
 						trow +='			<tr><td class="tdrow tdrowname tdrowl">'+teamA+'</td><td  class="tdrow tdrowname tdrowc">Vs.</td><td  class="tdrow tdrowname tdrowr">'+teamB+'</td></tr>';
 						trow +='		</table>';
-						trow +='</td>';		
+						trow +='</td>';
 						//console.log("i>>"+i);
 						if(i%2!==0){		
 							//console.log("i 1>>"+i);					
@@ -168,7 +169,7 @@ $(function()
 			if ( $('#resultteamA').val().length > 2 || isNaN( $('#resultteamA').val() )
 			|| $('#resultteamB').val().length > 2 || isNaN( $('#resultteamB').val()) 
 			|| $('#resultteamB').val() === '' || $('#resultteamB').val() === ''  ) {
-				alert('Digite un número entre 0 y 99');
+				alert('Digite un número entre 0 y 9');
 				return false;
 			}
 			else {
@@ -180,7 +181,7 @@ $(function()
 				var hour = d.getHours();
 				var minute = d.getMinutes();
 				var second = d.getSeconds();
-				var fecha = year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second
+				var fecha = year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;
 				var date2 = new Date(fecha);
 				var time = date.getTime();
 				var time2 = date2.getTime();
@@ -193,11 +194,11 @@ $(function()
 
 					sendData = {
 							"contextRequestDTO": {
-							"applicationName": "asa",
-							"idTransaction": "asas",
+							"applicationName": 'mobile',
+							"idTransaction": idTransaccion,
 							"pageNumber": 0,
 							"pageSize": 0,
-							"userName": "jgomez"
+							"userName": defaultUserName
 						},
 						 "idMatch": idMatch,
 						 "idPolla": idPolla,
