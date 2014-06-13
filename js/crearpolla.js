@@ -116,7 +116,7 @@ $(document).ready(function() {
                     "emails": emails,
                 };
 
-                htmlHREF = "../6intregrantes/integrantes.html";
+                htmlHREF = "../6integrantes/integrantes.html";
 
             }
 
