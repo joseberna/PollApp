@@ -94,12 +94,12 @@ $(function()
 		if(typeof(Storage) != "undefined")
 		{  	  			
 
-			sessionStorage.setItem(keyStorage,
+			localStorage.setItem(keyStorage,
 				JSON.stringify(user));
 		}
 		else
 		{
-			$('#msg').text("No soporta el sessionStorage");
+			$('#msg').text("No soporta el localStorage");
 
 			$('#msg').css({
 				visibility: 'visible'

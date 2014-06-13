@@ -116,7 +116,8 @@ $(document).ready(function() {
         if(confirm('Confirma que desea eliminar la invitacion.')) {
             var _this = $(e.target);
             var idUser = _this.data('user');
-            //console.log(e.target, $(e.target));
+            
+            console.log("idUser >> "+ idUser);
             
             //TODO LEER EL USUARIO LOGUEADO DEL SESSION STORAGE PARA MANDARLO COMO PARAMETRO
             var apiUrl = Servicios.removeGuestUser;

@@ -135,10 +135,10 @@ function loadImages()
 
 	list = $('.flicker-pollapp').children('ul').last();	
 
-	if(sessionStorage.getItem(keyStorage) != null)
+	if(localStorage.getItem(keyStorage) != null)
 	{
 
-		dataModel = JSON.parse(sessionStorage.getItem(keyStorage));	
+		dataModel = JSON.parse(localStorage.getItem(keyStorage));	
 
 		$(".numVotosChica").text(dataModel.score +  ' votos');	
 

@@ -62,7 +62,7 @@ function getIdUser() {
 //Save a setting on the device.
 function saveSessionValue(key, value){
 	if(typeof(Storage) !== 'undefined') {
-		sessionStorage.setItem(key, value);
+		localStorage.setItem(key, value);
     	//window.localStorage.setItem(key, value);
     }
 }
@@ -83,7 +83,7 @@ function getSessionValue(key){
 			return sessionStorage.getItem(key);
 		}*/
 
-		return sessionStorage.getItem(key);
+		return localStorage.getItem(key);
 	}
 }
 

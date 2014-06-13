@@ -127,12 +127,12 @@ $(function()
   		{  	
   			var model = selectedtModel(ev.target.id);  			
 
-  			sessionStorage.setItem(keyStorage, 
+  			localStorage.setItem(keyStorage, 
   				JSON.stringify(model));
   		}
 		else
   		{
-  			alert("No soporta storage");
+  			alert("No soporta localStorage");
   		}
 
   		window.location.href = "votachicapollapp.html";
