@@ -119,22 +119,23 @@ $(document).ready(function() {
             
             console.log("idUser >> "+ idUser);
             
-            //TODO LEER EL USUARIO LOGUEADO DEL SESSION STORAGE PARA MANDARLO COMO PARAMETRO
+            //TODO ESTE SERVICIO NO FUNCIONA SI SE UNA json Y SE ENVIAN LOS PARAMETROS USANDO EL atributo data DEL AJAX
             var apiUrl = Servicios.removeGuestUser;
             var idTransaccion = getIdTransaccion();
+            var apiUrl = Servicios.removeGuestUser+'?application=mobile&idGuest='+idUser+'&idTransaction='+idTransaccion+'&user='+defaultUserName;
 
             console.log('apiUrl>>'+apiUrl);
             $.ajax({
                 url: apiUrl, 
                 dataType: 'json', 
                 contentType: 'application/json; charset=utf-8', 
-                type: "DELETE", 
-                data: {
+                type: "DELETE",
+                /*data: {
                     application: 'mobile',
                     idGuest: idUser,
                     idTransaction: idTransaccion,
                     user: defaultUserName
-                },
+                },*/
                 success: function(data) {  
                     try {                       
                         console.log('data', data);

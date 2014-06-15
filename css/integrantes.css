@@ -57,6 +57,10 @@ input[type=image], img {
 	margin: 5%;
 }
 
+#divIntegrantes {
+	overflow-y:scroll;
+}
+
 .divIntegrantes ul {
 	display: block;
 	width: 100%;

@@ -114,9 +114,7 @@ $(document).ready(function() {
                     "idPolla": idPolla,
                     "idUserAdmin": idUser,
                     "emails": emails,
-                };
-
-                htmlHREF = "../6integrantes/integrantes.html";
+                };                
 
             }
 
@@ -141,6 +139,7 @@ $(document).ready(function() {
                                 window.location.href = htmlHREF;
                             } else {
                                 alert('Invitaciones enviadas exitosamente.');
+                                htmlHREF = "../6integrantes/integrantes.html?id="+idPolla+"&nombre="+$('#txtNombrePolla').val()+"&idUserAdmin="+idUser;
                                 window.location.href = htmlHREF;
                             }
 
