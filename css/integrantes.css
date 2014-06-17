@@ -51,14 +51,11 @@ input[type=image], img {
 	text-align: left;
 	display: inline-block;
 	width: 90%;	
-	/*overflow-y:scroll;*/
+	height: 70%;
+	overflow-y:scroll;
 	/*background-color: #fff;*/
 	/*background-color: rgba(255,255,255,0.7);*/
 	margin: 5%;
-}
-
-#divIntegrantes {
-	overflow-y:scroll;
 }
 
 .divIntegrantes ul {

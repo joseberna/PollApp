@@ -80,7 +80,8 @@ function getSessionValue(key){
 			});
 		} else {		
 			console.log("Usuario del storage");
-			return sessionStorage.getItem(key);
+			//return sessionStorage.getItem(key);
+			return localStorage.getItem(key);
 		}*/
 
 		return localStorage.getItem(key);
@@ -92,9 +93,8 @@ function getIdTransaccion() {
 }
 
 function formatDate(strDate) {
-	var arrDate = strDate.split('T');
-	
 	if(arrDate !== null && arrDate !== undefined) {
+		var arrDate = strDate.split('T');
 		return arrDate[0];
 	}
 

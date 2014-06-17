@@ -3,8 +3,8 @@
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:gap="http://phonegap.com/ns/1.0"
     id="us.pollapp.inturik"
-    versionCode="800"
-    version="0.3.0.3">
+    versionCode="400"
+    version="0.2.0.0">
    
     <name>PollApp</name>
 
@@ -22,6 +22,8 @@
     <preference name="auto-hide-splash-screen" value="false" />
     <preference name="permissions" value="none"/>
     <preference name="android-windowSoftInputMode" value="adjustPan" />
+	<preference name="android-launchMode" value="singleInstance" />
+	<preference name="android-alwaysRetainTaskState" value="true" />
 
     <!-- Android icons -->
     <icon src="Resources/icons/android/36x36.png"  gap:platform="android" gap:density="ldpi" />

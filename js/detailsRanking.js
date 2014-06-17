@@ -142,7 +142,7 @@ $( document ).ready(function() {
 
         $.each(data.lstRankingUserDTO, function(index, value) {
 					$('#tbDetailsUserRanking').append(
-						'<tr><td class="trow date" colspan="7"><label>'+value.dateMatch.substr(0,10)+'</label></td>'+
+						'<tr><td class="trow date" colspan="7"><label>'+formatDate(value.dateMatch)+'</label></td>'+
 						'<tr><td class="trow team" colspan="3"><label>'+value.nameTeamA+'</label></td></td><td><label>VS.</label></td><td class="trow team"  colspan="3"><label>'+value.nameTeamB+'</label></td></tr>'+
 						'<tr><td class="trow band" ><div><img src="../img/flags/'+value.flagTeamA+'"/></td><td class="trow score"><label>'+value.scoreTeamA+'</label></td><td class="trow scorereal"><label>'+value.scoreOrgTeamA+'</label></td><td></td><td class="trow band"><div><img src="../img/flags/'+value.flagTeamB+'"/></td><td class="trow score"><label>'+value.scoreTeamB+'</label></td><td class="trow scorereal"><label>'+value.scoreOrgTeamB+'</label></td></tr>'+
 						'<tr><td colspan="7"><label>PUNTOS GANADOS = '+value.totalScore+'</label></td><tr><td><br></td></tr>'/*+

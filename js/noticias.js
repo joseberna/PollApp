@@ -7,6 +7,12 @@ $(function()
 
 	$('#linkLoadMore').click(loadMore);
 
+	$(".posts").scroll( function() {
+  		if($(this)[0].scrollHeight - $(this).scrollTop() == $(this).outerHeight()) {   			
+   			loadMore();
+  	}
+	});
+
 	getDataTweets(countTweeets, 0);
 
 	function getDataTweets(count, maxId)
@@ -79,6 +85,8 @@ $(function()
 
 		var date = parseTwitterDate(createdAt);
 
+		text = searchURLText(text);
+
 		var template = '<article class="post"> \
 		<div class="description"> \
 		<figure class="imagen"> \
@@ -93,17 +101,23 @@ $(function()
 		<p class="date"><strong>'+date+'</strong> </p> \
 		</div> \
 		</div> \
-		</article>';
-
-		//searchURLText(text);
+		</article>';		
 
 		return template;
 	}
 
 	function searchURLText(textTweet){
 
-		//var a = textTweet.contains('http');
-		console.log("HTTP >> " + textTweet);
+		var index = textTweet.toLowerCase().indexOf('http');		
+
+		if (index != -1) {
+			var url = textTweet.substring(index, textTweet.length);
+			var UrlHTML = "<a href='"+url+"'>"+url+'</a>';			
+			textTweet = textTweet.substring(0, index) + " " + UrlHTML;
+			return textTweet;
+		};
+
+		return textTweet;
 
 	}
 
@@ -149,9 +163,9 @@ $(function()
 		return pad(d.getDate()) + " " + monthNames[d.getMonth()] + " " + d.getFullYear();
 	}
 
-	function loadMore(ev){
+	function loadMore(){
 		
-		ev.preventDefault();
+		//ev.preventDefault();
 
 		getDataTweets(countTweeets, ++maxIdGlobal);
 
