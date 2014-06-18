@@ -1,4 +1,5 @@
 var defaultUserName = 'pollappMobile';
+var keyIsLogIn = 'isLogIn';
 
 //Urls produccion
 var Servicios = {
@@ -115,5 +116,10 @@ function onAjaxLoad() {
 function onAjaxComplete() {
 	$('.ajax-load').css('display', 'none');
 }
+
+function isLogIn(){
+	return localStorage.getItem(keyIsLogIn);
+}
+
 
 

@@ -9,7 +9,19 @@ $(function()
 	});
 
 	$("#email").val("");
-	$("#password").val("");	
+	$("#password").val("");
+
+	validateUserLogIn();
+
+	function validateUserLogIn(){
+
+		var isUserLogIn = isLogIn();
+
+		if (isUserLogIn != undefined && isUserLogIn == true) {
+			window.location.href = "inicio.html";
+		};
+
+	}
 
 	function validateUser(user, password)
 	{
@@ -78,6 +90,9 @@ $(function()
 
 		if(typeof(Storage) != "undefined")
 		{  	  			
+
+			localStorage.setItem(keyIsLogIn,
+				true);
 
 			localStorage.setItem(keyStorage,
 				JSON.stringify(user));
