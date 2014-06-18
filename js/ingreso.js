@@ -15,9 +15,11 @@ $(function()
 
 	function validateUserLogIn(){
 
-		var isUserLogIn = isLogIn();
+		console.log("Validate User log in");
 
-		if (isUserLogIn != undefined && isUserLogIn == true) {
+		var isUserLogIn = isLogIn();		
+
+		if (isUserLogIn != null && isUserLogIn == 'true') {			
 			window.location.href = "inicio.html";
 		};
 
