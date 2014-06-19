@@ -28,8 +28,7 @@ $(function() {
 	pDate = Request.Params["date"];//Fecha y hora del partido en formato YYYY-MM-DD HH:MM:SS
 	date = new Date(pDate);//Fecha y hora del partido en formato YYYY-MM-DD HH:MM:SS
 	idMatch = Request.Params["idMatch"];
-	idPolla = Request.Params["idPolla"];
-	
+	idPolla = Request.Params["idPolla"];	
 	
 	/*teamA = 'Colombia';//Nombre del equipo A
 	teamB = 'Grecia';//Nombre del equipo B
@@ -164,7 +163,8 @@ $(function() {
 		});
 	}
 	
-	function registerResult(){
+	function registerResult(){		
+
 		$('#saveresults').click(function() {
 			if ( $('#resultteamA').val().length > 2 || isNaN( $('#resultteamA').val() )
 			|| $('#resultteamB').val().length > 2 || isNaN( $('#resultteamB').val()) 
@@ -185,13 +185,13 @@ $(function() {
 				var date2 = new Date(fecha);
 				var time = date.getTime();
 				var time2 = date2.getTime();
-				var resta = time-time2;
+				var resta = time-time2;				
 				
-				if( resta >= 600000){
+				if(resta >= 600000){
 					var apiUrl = Servicios.setResultMatchByUser;
 					var idTransaccion = getIdTransaccion();
 					var idUser = getIdUser();
-
+					
 					sendData = {
 							"contextRequestDTO": {
 							"applicationName": 'mobile',

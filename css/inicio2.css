@@ -1,0 +1,13 @@
+@font-face{font-family:"pollapp_font";src:url("../fonts/Questrial-Regular.ttf") format("truetype")}
+body{width:100%;height:100%;font-size:16px;font-family:"pollapp_font";background-image:url("../img/fondos/480x800-android-menuinicio.png")}
+.menu{height:70%;}
+.menu .options{height:100%;width:100%;text-align:center;padding:1.5em 0 1.5em 0;}
+.menu .options .topMenu{overflow:hidden;height:35%;width:100%;}
+.menu .options .topMenu .leftMenu{float:left;width:48%;height:100%;margin-left:.5em;display:inline-block;}
+.menu .options .topMenu .leftMenu .leftImage{width:100%;height:100%}
+.menu .options .topMenu .rightMenu{float:left;width:48%;height:100%;margin:0;display:inline-block;}
+.menu .options .topMenu .rightMenu .rightImage{width:100%;height:100%}
+.menu .options .downMenu1{height:30%;width:100%;}
+.menu .options .downMenu1 .imgdownMenu1{width:96%;height:100%}
+.menu .options .downMenu2{height:30%;width:100%;}
+.menu .options .downMenu2 .imgdownMenu2{width:96%;height:100%}

@@ -94,7 +94,7 @@ function getIdTransaccion() {
 }
 
 function formatDate(strDate) {
-	if(arrDate !== null && arrDate !== undefined) {
+	if(strDate !== null && strDate !== undefined) {
 		var arrDate = strDate.split('T');
 		return arrDate[0];
 	}
