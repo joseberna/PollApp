@@ -3,8 +3,8 @@
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:gap="http://phonegap.com/ns/1.0"
     id="us.pollapp.inturik"
-    versionCode="1000"
-    version="0.3.0.5">
+    versionCode="401"
+    version="0.2.0.1">
    
     <name>PollApp</name>
 
@@ -21,9 +21,9 @@
     <preference name="target-device" value="handset" />
     <preference name="auto-hide-splash-screen" value="false" />
     <preference name="permissions" value="none"/>
-    <preference name="android-windowSoftInputMode" value="adjustPan" />
-	<preference name="android-launchMode" value="singleInstance" />
-	<preference name="android-alwaysRetainTaskState" value="true" />
+
+    <!-- Se adiciona para la gestión de Notificaciones Push (260614)-->
+    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
 
     <!-- Android icons -->
     <icon src="Resources/icons/android/36x36.png"  gap:platform="android" gap:density="ldpi" />
