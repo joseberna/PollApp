@@ -1,0 +1,11 @@
+@font-face{font-family:"pollapp_font";src:url("../fonts/Questrial-Regular.ttf") format("truetype")}
+body{background:#2b1b4b;height:100%;}
+body .fondo_log{text-align:center;}
+body .fondo_log img{width:250px}
+body .botones_log{text-align:center;padding-top:5em;}
+body .botones_log .btn-facebook{width:50px}
+body .botones_log .btn-twitter{width:50px}
+body .botones_log .btn-g{width:50px}
+body .botones_log .btn-entrar img{width:120px;height:40px}
+body .terminos a{text-decoration:none;}
+body .terminos a h1{color:#fff;font-family:"pollapp_font";font-size:16px;text-align:center}

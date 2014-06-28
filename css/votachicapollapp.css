@@ -1,0 +1,8 @@
+body{width:100%;height:100%;background-image:url("../img/fondos/480x800-android-chicapollapp.png");}
+body section{height:70%;padding:0 0 1em 0;}
+body section .votacion .copas{padding:.3em 0 0 0;text-align:center;}
+body section .votacion .copas a{text-decoration:none}
+body section .votacion .copas img{height:2em;width:2em}
+body section .votacion .copas .votar .imgVotar{height:2em;padding:0 0 0 2em;width:4em}
+body section .votacion .divNumVotos{padding:0 0 0 3em}
+body section .votacion .numVotosChica{font-weight:bold;color:#2b1b4b;background:#00aced}

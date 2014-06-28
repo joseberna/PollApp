@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<widget
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0"
+    id="us.pollapp.inturik"
+    versionCode="400"
+    version="0.2.0.0">
+   
+    <name>PollApp</name>
+
+    <description>
+        PollApp es una aplicación móvil gratuita con la que podrás predecir con tus amigos los resultados de tus deportes favoritos.
+     </description>
+
+    <author href="http://pollapp.us/">
+        Inturik SAS
+    </author>
+
+    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="handset" />
+    <preference name="auto-hide-splash-screen" value="false" />
+    <preference name="permissions" value="none"/>
+    <preference name="android-windowSoftInputMode" value="adjustPan" />
+	<preference name="android-launchMode" value="singleInstance" />
+	<preference name="android-alwaysRetainTaskState" value="true" />
+
+    <!-- Android icons -->
+    <icon src="Resources/icons/android/36x36.png"  gap:platform="android" gap:density="ldpi" />
+    <icon src="Resources/icons/android/48x48.png"  gap:platform="android" gap:density="mdpi" />
+    <icon src="Resources/icons/android/72x72.png"  gap:platform="android" gap:density="hdpi" />
+    <icon src="Resources/icons/android/96x96.png"  gap:platform="android" gap:density="xhdpi" />
+
+    <!-- iPhone icons -->
+    <icon src="Resources/icons/ios/57x57.png"  gap:platform="ios" width="57" height="57" />
+    <icon src="Resources/icons/ios/114x114.png" gap:platform="ios" width="114" height="114" />
+
+    <!-- Android splashes -->
+    <gap:splash src="Resources/splash/android/200x320.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="Resources/splash/android/320x480.png"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="Resources/splash/android/480x800.png"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="Resources/splash/android/720X1280.png" gap:platform="android" gap:density="xhdpi" />
+
+    <!-- iPhone splashes -->
+    <gap:splash src="Resources/splash/ios/320x480.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="Resources/splash/ios/640x960.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="Resources/splash/ios/640x1136.png" gap:platform="ios" width="640" height="1136" />
+</widget>
