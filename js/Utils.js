@@ -1,5 +1,7 @@
 var defaultUserName = 'pollappMobile';
 var keyIsLogIn = 'isLogIn';
+var weekdays = new Array("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo");
+var months = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre");
 
 //Urls produccion
 var Servicios = {

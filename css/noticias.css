@@ -11,4 +11,6 @@ section .posts .post .description .details .name{color:#2b1b4b;font-size:1em;mar
 section .posts .post .description .details .screenName{color:grisOscuro;font-size:.8em;margin:0;padding:.5em .5em 0 0;text-align:left}
 section .posts .post .description .details .text{margin:.5em .5em .5em 0;text-align:justify}
 section .posts .post .description .imagen{float:left;}
-section .posts .post .description .imagen img{padding:.5em 0 .5em .5em;vertical-align:top}
+section .posts .post .description .imagen img{height:100%;width:100%;padding:.5em 0 .5em .5em;vertical-align:top}
+section .posts .post .description .icon{float:right;}
+section .posts .post .description .icon img{padding:.5em 1em .5em .5em;vertical-align:top}

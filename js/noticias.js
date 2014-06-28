@@ -92,6 +92,9 @@ $(function()
 		<figure class="imagen"> \
 		<img src="'+image+'"> \
 		</figure> \
+		<figure class="icon"> \
+		<img src="../img/bird_blue_16.png"> \
+		</figure> \
 		<div class="details"> \
 		<h2 class="name">'+name+'</h2> \
 		<h2 class="screenName">@'+screenName+'</h2> \

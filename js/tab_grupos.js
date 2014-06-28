@@ -125,13 +125,18 @@ $(function() {
         });
     }
 
-    function adicionarPartido(index, partido) {         
+    function adicionarPartido(index, partido) {    
+        
+        var fechaSplit = formatDate(partido.date).split('-');
+        var fechaPartido = new Date(partido.date);  
+        var day = weekdays[fechaPartido.getDay()]+', '+months[fechaPartido.getMonth()]+' '+fechaSplit[2]+' de '+fechaPartido.getFullYear()+' - '+partido.hour;
+
         $('#ajax-content').append(
             '<div class="ui-grid-b gri_grupos" data-teama="'+partido.teamA+
                 '" data-teamb="'+partido.teamB+'" '+
                 '" data-imga="'+partido.flagTeamA+'" '+
                 '" data-imgb="'+partido.flagTeamB+'" '+
-                '" data-date="'+formatDate(partido.date)+' '+partido.hour+':00" '+
+                '" data-date="'+day+
                 '" data-idpolla="'+idPolla+'" '+
                 '" data-idmatch="'+partido.id+'">'+
                 '<div class="ui-block-a">'+
@@ -147,7 +152,7 @@ $(function() {
                 '</div>'+
             '</div>'+
             'Grupo '+partido.nameGroup+'</br>'+
-            formatDate(partido.date)+' - '+partido.hour+'</br>'+
+            day+'</br>'+
             partido.stadium+'</br></br> ---------------------------------------');
     }    
 

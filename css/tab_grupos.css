@@ -30,19 +30,26 @@ section .modelsGrid .modelPhoto{border:5px #e1b800 solid;height:80%;width:80%}*/
 #nav li a, #nav li a:visited {
 	display: block; 
 	float: left; 
-	padding: 10px; 
+	padding: 4px 0px 0px 0px; 
 	background-color: transparent;
 	text-transform: uppercase; 
 	color: #000; text-decoration: none; 
-	margin-right: 1px; 
+	margin-right: 2px; 
 }
-#nav li a:hover {
-	color: #2D336A;
+
+#nav li a.current:hover {
+	background-color: #E1B800;
 }
+
 #nav li a.current {
 	background-color: #2D336A;
 	color: #FFFFFF; 
 	border-color: #ccc;
+}
+
+#nav li a img {
+	width: 70%;
+	height: 70%;	
 }
 
 /*#ajax-content {padding: 10px 0; width: 100%; overflow: hidden; height: 250px; margin-bottom: 15px; border: 1px solid #ccc;}*/
