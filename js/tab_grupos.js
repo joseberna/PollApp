@@ -129,14 +129,15 @@ $(function() {
         
         var fechaSplit = formatDate(partido.date).split('-');
         var fechaPartido = new Date(partido.date);  
-        var day = weekdays[fechaPartido.getDay()]+', '+months[fechaPartido.getMonth()]+' '+fechaSplit[2]+' de '+fechaPartido.getFullYear()+' - '+partido.hour;
+        var day = weekdays[fechaPartido.getDay()]+', '+months[fechaPartido.getMonth()]+' '+fechaSplit[2]+' de '+fechaPartido.getFullYear()+' - '+partido.hour;        
 
         $('#ajax-content').append(
             '<div class="ui-grid-b gri_grupos" data-teama="'+partido.teamA+
                 '" data-teamb="'+partido.teamB+'" '+
                 '" data-imga="'+partido.flagTeamA+'" '+
                 '" data-imgb="'+partido.flagTeamB+'" '+
-                '" data-date="'+day+
+                '" data-day="'+day+'" '+
+                '" data-date="'+formatDate(partido.date)+' '+partido.hour+':00" '+
                 '" data-idpolla="'+idPolla+'" '+
                 '" data-idmatch="'+partido.id+'">'+
                 '<div class="ui-block-a">'+
@@ -167,7 +168,7 @@ $(function() {
             var params = encodeURIComponent('teamA='+parentDiv.data('teama')+'&teamB='+parentDiv.data('teamb')+
                 '&imgA='+parentDiv.data('imga')+'&imgB='+parentDiv.data('imgb')+
                 '&date='+parentDiv.data('date')+'&idPolla='+parentDiv.data('idpolla')+
-                '&idMatch='+parentDiv.data('idmatch'));
+                '&idMatch='+parentDiv.data('idmatch')+'&day='+parentDiv.data('day'));
 
             console.log(params);
 

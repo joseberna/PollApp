@@ -25,6 +25,7 @@ $(function() {
 	teamB = Request.Params["teamB"];//Nombre del equipo B
 	imgA = Request.Params["imgA"];//Nombre Bandera Equipo A
 	imgB = Request.Params["imgB"];//Nombre Bandera Equipo B
+	day = Request.Params["day"];
 	pDate = Request.Params["date"];//Fecha y hora del partido en formato YYYY-MM-DD HH:MM:SS
 	date = new Date(pDate);//Fecha y hora del partido en formato YYYY-MM-DD HH:MM:SS
 	idMatch = Request.Params["idMatch"];
@@ -39,7 +40,7 @@ $(function() {
 	idPolla = 40;
 	idUser = 10;*/
 	
-	$('#fechaPartido').html(pDate);
+	$('#fechaPartido').html(day);
 	$('.volver-btn').click(function() {
         event.preventDefault();
         history.back(1);
